@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.cpp
+min_period.h
+/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.h
+vector
+-
+unistd.h
+-
+
+/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.h
+iostream
+-
+stack
+-
+
