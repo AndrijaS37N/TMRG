@@ -9,6 +9,7 @@ public:
     };
     void push(const short &number);
     const void pop();
+    void reverse_list();
     void print_vertically();
     void print_horizontally();
     static void activate_task();
@@ -21,6 +22,10 @@ public:
 
     int get_list_size() const {
         return list_size;
+    }
+
+    Node *get_head() const {
+        return head;
     }
 
 private:

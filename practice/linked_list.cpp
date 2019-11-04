@@ -2,6 +2,7 @@
 #include "linked_list.h"
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -93,8 +94,15 @@ void LinkedList::activate_task() {
     lls.print_horizontally();
     lls.print_vertically();
     cout << "Size: " << lls.get_list_size() << endl;
-    ConsoleColoring::red("Testing error logging.");
-    ConsoleColoring::blue("Testing info logging.");
+    cout << '\n';
+    cout << "Added 4 new elements." << endl;
+    for (short j = 1; j <= 4; ++j) {
+        lls.push(j);
+    }
+    cout << "Head: " << lls.get_head()->data << endl;
+    lls.print_horizontally();
+    lls.reverse_list();
+    lls.print_horizontally();
 }
 
 const void LinkedList::pop() {
@@ -105,4 +113,18 @@ const void LinkedList::pop() {
         head = head->next_node;
         list_size--;
     }
+}
+
+void LinkedList::reverse_list() {
+    ConsoleColoring::blue("Reversing the list."); // Let's write down the example. The list is 4, 3, 2, 1.
+    struct Node *previous, *current, *next;
+    previous = nullptr;
+    current = head; // The head is 4.
+    while (current != nullptr) { // The key here is to make a swap.
+        next = current->next_node;                                          // | next = 3      | next = 2      | next = 1      | next = nullptr
+        current->next_node = previous;                                      // | 3 = 4         | 2 = 3         | 1 = 3         | nullptr = 2
+        previous = current; // This one is useful for the last iteration.   // | previous = 4  | previous = 3  | previous = 2  | previous = 1
+        current = next; // Until current is nullptr.                        // | 4 = 3         | 3 = 2         | 2 = 1         | 1 = nullptr     -> This will be the breaking condition.
+    }
+    head = previous; // Here is where to use that previous buffer Node.
 }
