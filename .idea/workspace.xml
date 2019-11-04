@@ -11,7 +11,36 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89e37a87-7c53-4721-9364-637040c7724c" name="Default Changelist" comment="" />
+    <list default="true" id="89e37a87-7c53-4721-9364-637040c7724c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/global/console_coloring.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/global/console_coloring.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/linked_list.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/linked_list.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/min_period_alt.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/min_period_alt.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/andrijadjuric.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/andrijadjuric.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/practice/min_period.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/practice/min_period.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/TMRG" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TMRG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/TMRG.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TMRG.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/min_period.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/practice/min_period.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/min_period.h" beforeDir="false" afterPath="$PROJECT_DIR$/practice/min_period.h" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +51,15 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1SfQ31VG4qHti3YB1ops8ZkfjGE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="settings.editor.splitter.proportion" value="0.2438302" />
   </component>
   <component name="RunDashboard">
@@ -64,10 +98,33 @@
       <workItem from="1572342239114" duration="23766000" />
       <workItem from="1572426922402" duration="1382000" />
       <workItem from="1572428542170" duration="7433000" />
+      <workItem from="1572450523344" duration="503000" />
+      <workItem from="1572452381882" duration="93000" />
+      <workItem from="1572453235752" duration="35000" />
+      <workItem from="1572453282626" duration="55000" />
+      <workItem from="1572811169416" duration="13000" />
+      <workItem from="1572811207434" duration="5691000" />
+      <workItem from="1572818923374" duration="2401000" />
+      <workItem from="1572858652275" duration="15813000" />
+      <workItem from="1572881315915" duration="9204000" />
+      <workItem from="1572894576050" duration="1035000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

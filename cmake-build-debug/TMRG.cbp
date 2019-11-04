@@ -82,13 +82,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/global/console_coloring.cpp">
+			<Option target="TMRG"/>
+		</Unit>
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/global/console_coloring.h">
+			<Option target="TMRG"/>
+		</Unit>
 		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/main.cpp">
+			<Option target="TMRG"/>
+		</Unit>
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.cpp">
+			<Option target="TMRG"/>
+		</Unit>
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.h">
 			<Option target="TMRG"/>
 		</Unit>
 		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.cpp">
 			<Option target="TMRG"/>
 		</Unit>
 		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.h">
+			<Option target="TMRG"/>
+		</Unit>
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period_alt.cpp">
+			<Option target="TMRG"/>
+		</Unit>
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period_alt.h">
 			<Option target="TMRG"/>
 		</Unit>
 		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/CMakeLists.txt">

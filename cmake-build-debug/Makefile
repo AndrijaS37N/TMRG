@@ -123,6 +123,33 @@ TMRG/fast:
 	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/build
 .PHONY : TMRG/fast
 
+global/console_coloring.o: global/console_coloring.cpp.o
+
+.PHONY : global/console_coloring.o
+
+# target to build an object file
+global/console_coloring.cpp.o:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/global/console_coloring.cpp.o
+.PHONY : global/console_coloring.cpp.o
+
+global/console_coloring.i: global/console_coloring.cpp.i
+
+.PHONY : global/console_coloring.i
+
+# target to preprocess a source file
+global/console_coloring.cpp.i:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/global/console_coloring.cpp.i
+.PHONY : global/console_coloring.cpp.i
+
+global/console_coloring.s: global/console_coloring.cpp.s
+
+.PHONY : global/console_coloring.s
+
+# target to generate assembly for a file
+global/console_coloring.cpp.s:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/global/console_coloring.cpp.s
+.PHONY : global/console_coloring.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -149,6 +176,33 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+practice/linked_list.o: practice/linked_list.cpp.o
+
+.PHONY : practice/linked_list.o
+
+# target to build an object file
+practice/linked_list.cpp.o:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/linked_list.cpp.o
+.PHONY : practice/linked_list.cpp.o
+
+practice/linked_list.i: practice/linked_list.cpp.i
+
+.PHONY : practice/linked_list.i
+
+# target to preprocess a source file
+practice/linked_list.cpp.i:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/linked_list.cpp.i
+.PHONY : practice/linked_list.cpp.i
+
+practice/linked_list.s: practice/linked_list.cpp.s
+
+.PHONY : practice/linked_list.s
+
+# target to generate assembly for a file
+practice/linked_list.cpp.s:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/linked_list.cpp.s
+.PHONY : practice/linked_list.cpp.s
 
 practice/min_period.o: practice/min_period.cpp.o
 
@@ -177,6 +231,33 @@ practice/min_period.cpp.s:
 	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/min_period.cpp.s
 .PHONY : practice/min_period.cpp.s
 
+practice/min_period_alt.o: practice/min_period_alt.cpp.o
+
+.PHONY : practice/min_period_alt.o
+
+# target to build an object file
+practice/min_period_alt.cpp.o:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.o
+.PHONY : practice/min_period_alt.cpp.o
+
+practice/min_period_alt.i: practice/min_period_alt.cpp.i
+
+.PHONY : practice/min_period_alt.i
+
+# target to preprocess a source file
+practice/min_period_alt.cpp.i:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.i
+.PHONY : practice/min_period_alt.cpp.i
+
+practice/min_period_alt.s: practice/min_period_alt.cpp.s
+
+.PHONY : practice/min_period_alt.s
+
+# target to generate assembly for a file
+practice/min_period_alt.cpp.s:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.s
+.PHONY : practice/min_period_alt.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +267,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... TMRG"
+	@echo "... global/console_coloring.o"
+	@echo "... global/console_coloring.i"
+	@echo "... global/console_coloring.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... practice/linked_list.o"
+	@echo "... practice/linked_list.i"
+	@echo "... practice/linked_list.s"
 	@echo "... practice/min_period.o"
 	@echo "... practice/min_period.i"
 	@echo "... practice/min_period.s"
+	@echo "... practice/min_period_alt.o"
+	@echo "... practice/min_period_alt.i"
+	@echo "... practice/min_period_alt.s"
 .PHONY : help
 
 

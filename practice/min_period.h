@@ -5,10 +5,11 @@
 #include <stack>
 
 class MinPeriod {
-public:
+private:
     static int min_period(const int *array, const int &size);
     static void find_dividers(std::stack<int> &dividers, const int &size);
     static void print_dividers(std::stack<int> dividers);
+public:
     static void activate_task();
 };
 
