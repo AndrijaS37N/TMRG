@@ -6,7 +6,7 @@
 using namespace std;
 
 void LinkedList::push(const short &number) {
-    struct Node *new_node = new Node;
+    struct Node *new_node = new Node; // TODO -> Is this OK not to delete?
     if (new_node == nullptr)
         ConsoleColoring::red("Memory allocation failed.");
     else {
@@ -118,6 +118,23 @@ struct Node *LinkedList::get_tail() {
     assert(0);
 }
 
+void LinkedList::insert_at(struct Node *new_node, const unsigned short &index) { // 1, 2, 3, 4, nullptr
+    struct Node *current = head;                                                 // c, n, 3, 4, nullptr
+    struct Node *previous = nullptr;                                             // p, c, n, 4, nullptr
+    int counter = 0;
+    while (current) { // TODO -> WIP; First index and last index insertion.
+        if (counter == index) {
+            previous->next_node = new_node;
+            new_node->next_node = current;
+            break;
+        }
+        previous = current;
+        current = current->next_node;
+        counter++;
+    }
+    ConsoleColoring::blue("New element inserted.");
+}
+
 void LinkedList::activate_task() {
     LinkedList lls(nullptr, "Linked List Structure");
     ConsoleColoring::cyan(lls.get_linked_list_name());
@@ -151,4 +168,10 @@ void LinkedList::activate_task() {
     lls.print_horizontally();
     cout << "Element at index 2: " << lls.get_element(2)->data << endl;
     cout << "Tail: " << lls.get_tail()->data << endl;
+
+    // TODO -> WIP
+    struct Node *n = new Node; // TODO -> Is this OK not to delete? Explain.
+    n->data = 100;
+    lls.insert_at(n, 4);
+    lls.print_horizontally();
 }

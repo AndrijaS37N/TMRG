@@ -15,6 +15,7 @@ public:
     void print_horizontally();
     struct Node *get_element(const unsigned short &index);
     struct Node *get_tail();
+    void insert_at(struct Node * new_node, const unsigned short &index);
     static void activate_task();
 
     const char *get_linked_list_name() const {
