@@ -7,11 +7,14 @@ public:
                                                                            linked_list_name(linked_list_name) {
         list_size = 0;
     };
+
     void push(const short &number);
     const void pop();
     void reverse_list();
     void print_vertically();
     void print_horizontally();
+    struct Node *get_element(const unsigned short &index);
+    struct Node *get_tail();
     static void activate_task();
 
     const char *get_linked_list_name() const {
@@ -24,7 +27,7 @@ public:
         return list_size;
     }
 
-    Node *get_head() const {
+    struct Node *get_head() const {
         return head;
     }
 
