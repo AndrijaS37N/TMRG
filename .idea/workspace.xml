@@ -13,8 +13,10 @@
   <component name="ChangeListManager">
     <list default="true" id="89e37a87-7c53-4721-9364-637040c7724c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/practice/linked_list.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/practice/linked_list.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TMRG.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/TMRG" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TMRG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/practice/linked_list.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/practice/linked_list.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/practice/linked_list.h" beforeDir="false" afterPath="$PROJECT_DIR$/practice/linked_list.h" afterDir="false" />
     </list>
@@ -36,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="dynamic.analysis.tools.valgrind" />
     <property name="settings.editor.splitter.proportion" value="0.2438302" />
   </component>
   <component name="RunDashboard">
@@ -85,7 +87,8 @@
       <workItem from="1572858652275" duration="15813000" />
       <workItem from="1572881315915" duration="9204000" />
       <workItem from="1572894576050" duration="12068000" />
-      <workItem from="1572949274496" duration="15672000" />
+      <workItem from="1572949274496" duration="15710000" />
+      <workItem from="1573037121704" duration="9243000" />
     </task>
     <servers />
   </component>

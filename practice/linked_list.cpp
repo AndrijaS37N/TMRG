@@ -172,6 +172,15 @@ void LinkedList::activate_task() {
     // TODO -> WIP
     struct Node *n = new Node; // TODO -> Is this OK not to delete? Explain.
     n->data = 100;
-    lls.insert_at(n, 4);
+    lls.insert_at(n, 2);
     lls.print_horizontally();
+}
+
+LinkedList::~LinkedList() { // TODO -> WIP
+    // Node *current = head;
+    // while (current) {
+    //
+    //     current = current->next_node;
+    // }
+    // ConsoleColoring::blue("Destructor finished deleting nodes.");
 }
