@@ -5,21 +5,6 @@
 
 #define TASK_SWITCH 0
 
-class Andrija { // TMP
-public:
-    int a;
-    int b;
-
-    Andrija(int a, int b) {
-        this->a = a;
-        this->b = b;
-    }
-};
-
-void function_which_allocates() { // TMP
-    auto *a = (float *) malloc(sizeof(float) * 45);
-}
-
 using namespace std;
 
 /*
@@ -74,14 +59,6 @@ int main() {
     LinkedList::activate_task();
 
     // TODO -> 👨‍🚀
-
-    Andrija *object = new Andrija(3, 7); // TMP
-    cout << sizeof(object) << endl;
-
-    Andrija *whoops = (Andrija *) malloc(sizeof(object)); // TMP
-    cout << sizeof(whoops) << endl;
-
-    function_which_allocates(); // TMP
 
     return 0;
 }

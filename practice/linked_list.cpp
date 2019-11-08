@@ -6,7 +6,7 @@
 using namespace std;
 
 void LinkedList::push(const short &number) {
-    struct Node *new_node = new Node; // TODO -> Is this OK not to delete?
+    struct Node *new_node = new Node;
     if (new_node == nullptr)
         ConsoleColoring::red("Memory allocation failed.");
     else {
@@ -20,30 +20,30 @@ void LinkedList::push(const short &number) {
 void LinkedList::print_vertically() {
     cout << "Vertical view:";
     short digits_length;
-    struct Node *current_node = head;
-    while (current_node) {
+    struct Node *current = head;
+    while (current) {
         cout << '\n';
-        digits_length = find_digits_length(current_node->data);
+        digits_length = find_digits_length(current->data);
         print_horizontal_lines(digits_length);
         cout << '\n';
-        cout << "| " << current_node->data << " |";
+        cout << "| " << current->data << " |";
         cout << '\n';
         print_horizontal_lines(digits_length);
         cout << '\n';
         cout << "  |";
         cout << '\n';
         cout << "  V";
-        current_node = current_node->next_node;
+        current = current->next_node;
     }
     cout << endl << "nullptr" << endl;
 }
 
 void LinkedList::print_horizontally() {
     cout << "Horizontal view: ";
-    struct Node *current_node = head;
-    while (current_node) {
-        cout << "[ " << current_node->data << " ] -> ";
-        current_node = current_node->next_node;
+    struct Node *current = head;
+    while (current) {
+        cout << "[ " << current->data << " ] -> ";
+        current = current->next_node;
     }
     cout << "nullptr" << endl;
 }
@@ -135,6 +135,17 @@ void LinkedList::insert_at(struct Node *new_node, const unsigned short &index) {
     ConsoleColoring::blue("New element inserted.");
 }
 
+LinkedList::~LinkedList() { // TODO -> WIP
+    struct Node *current = head;
+    struct Node *previous = nullptr;
+    while (current) {
+        previous = current;
+        current = current->next_node;
+        delete previous;
+    }
+    ConsoleColoring::blue("Destructor finished deleting nodes.");
+}
+
 void LinkedList::activate_task() {
     LinkedList lls(nullptr, "Linked List Structure");
     ConsoleColoring::cyan(lls.get_linked_list_name());
@@ -169,18 +180,8 @@ void LinkedList::activate_task() {
     cout << "Element at index 2: " << lls.get_element(2)->data << endl;
     cout << "Tail: " << lls.get_tail()->data << endl;
 
-    // TODO -> WIP
-    struct Node *n = new Node; // TODO -> Is this OK not to delete? Explain.
-    n->data = 100;
-    lls.insert_at(n, 2);
+    struct Node *new_one = new Node;
+    new_one->data = 100;
+    lls.insert_at(new_one, 2);
     lls.print_horizontally();
-}
-
-LinkedList::~LinkedList() { // TODO -> WIP
-    // Node *current = head;
-    // while (current) {
-    //
-    //     current = current->next_node;
-    // }
-    // ConsoleColoring::blue("Destructor finished deleting nodes.");
 }
