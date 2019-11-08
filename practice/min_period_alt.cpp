@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int MinPeriodAlt::min_period_alt(const int *array, const int &size) { // TODO - WIP
+int MinPeriodAlt::min_period_alt(const int *array, const int &size) { // TODO - Implement this with a linked list.
     return 0;
 }
 

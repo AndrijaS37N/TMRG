@@ -13,6 +13,10 @@
   <component name="ChangeListManager">
     <list default="true" id="89e37a87-7c53-4721-9364-637040c7724c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/TMRG" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TMRG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/linked_list.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/practice/linked_list.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/linked_list.h" beforeDir="false" afterPath="$PROJECT_DIR$/practice/linked_list.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/min_period_alt.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/practice/min_period_alt.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +87,7 @@
       <workItem from="1572894576050" duration="12068000" />
       <workItem from="1572949274496" duration="15710000" />
       <workItem from="1573037121704" duration="9625000" />
-      <workItem from="1573212792368" duration="1899000" />
+      <workItem from="1573212792368" duration="10682000" />
     </task>
     <servers />
   </component>

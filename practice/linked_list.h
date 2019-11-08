@@ -15,14 +15,13 @@ public:
     void print_horizontally();
     struct Node *get_element(const unsigned short &index);
     struct Node *get_tail();
-    void insert_at(struct Node *new_node, const unsigned short &index);
+    void insert_at(struct Node *insert_node, const unsigned short &index);
+    void replace_with(struct Node *replace_node, const unsigned short &index);
     static void activate_task();
 
     const char *get_linked_list_name() const {
         return linked_list_name;
     }
-
-    int list_size;
 
     int get_list_size() const {
         return list_size;
@@ -33,6 +32,7 @@ public:
     }
 
 private:
+    int list_size;
     struct Node *head;
     const char *linked_list_name;
     static int find_digits_length(short number);

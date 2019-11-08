@@ -74,9 +74,9 @@ const void LinkedList::pop() {
     if (head == nullptr)
         ConsoleColoring::yellow("Element not popped! Linked list has been emptied.");
     else {
-        cout << "Element popped!" << endl;
         head = head->next_node;
         list_size--;
+        cout << "Element popped!" << endl;
     }
 }
 
@@ -118,31 +118,66 @@ struct Node *LinkedList::get_tail() {
     assert(0);
 }
 
-void LinkedList::insert_at(struct Node *new_node, const unsigned short &index) { // 1, 2, 3, 4, nullptr
-    struct Node *current = head;                                                 // c, n, 3, 4, nullptr
-    struct Node *previous = nullptr;                                             // p, c, n, 4, nullptr
+void LinkedList::insert_at(struct Node *insert_node, const unsigned short &index) {
+    struct Node *current = head;
+    struct Node *previous = nullptr;
     int counter = 0;
-    while (current) { // TODO -> WIP; First index and last index insertion.
+    while (current) {
         if (counter == index) {
-            previous->next_node = new_node;
-            new_node->next_node = current;
-            break;
+            if (previous == nullptr) { // For the first one.
+                head = insert_node;
+                insert_node->next_node = current;
+                ConsoleColoring::blue("New element inserted.");
+                return;
+            } else { // For the ones in the middle.
+                previous->next_node = insert_node;
+                insert_node->next_node = current;
+                ConsoleColoring::blue("New element inserted.");
+                return;
+            }
         }
         previous = current;
         current = current->next_node;
         counter++;
+        if (counter == index && current == nullptr) { // For the last one.
+            previous->next_node = insert_node;
+            insert_node->next_node = current;
+            ConsoleColoring::blue("New element inserted.");
+            return;
+        }
     }
-    ConsoleColoring::blue("New element inserted.");
+    ConsoleColoring::red("New element not inserted.");
 }
 
-LinkedList::~LinkedList() { // TODO -> WIP
+void LinkedList::replace_with(struct Node *replace_node, const unsigned short &index) {
     struct Node *current = head;
     struct Node *previous = nullptr;
+    int counter = 0;
+    while (current) {
+        previous = current;
+        current = current->next_node;
+        if (counter == index) {
+            previous->data = replace_node->data;
+            replace_node->next_node = current;
+            ConsoleColoring::blue("Element replaced.");
+            return;
+        }
+        counter++;
+    }
+    ConsoleColoring::red("Element not replaced.");
+}
+
+LinkedList::~LinkedList() {
+    struct Node *current = head;
+    struct Node *previous = nullptr;
+    int c = 0;
     while (current) {
         previous = current;
         current = current->next_node;
         delete previous;
+        c++;
     }
+    delete current; // This should at his point of execution be nullptr.
     ConsoleColoring::blue("Destructor finished deleting nodes.");
 }
 
@@ -180,8 +215,26 @@ void LinkedList::activate_task() {
     cout << "Element at index 2: " << lls.get_element(2)->data << endl;
     cout << "Tail: " << lls.get_tail()->data << endl;
 
-    struct Node *new_one = new Node;
-    new_one->data = 100;
-    lls.insert_at(new_one, 2);
+    // Failures.
+    struct Node *insert_node = new Node;
+    insert_node->data = 100;
+    lls.insert_at(insert_node, lls.get_list_size() + 6);
     lls.print_horizontally();
+
+    struct Node *replace_node = new Node;
+    replace_node->data = -50;
+    lls.replace_with(replace_node, 22);
+    lls.print_horizontally();
+
+    // Successes.
+    insert_node->data = 100;
+    lls.insert_at(insert_node, lls.get_list_size()); // Insert at the end. Queue in.
+    lls.print_horizontally();
+
+    replace_node->data = -50;
+    lls.replace_with(replace_node, lls.get_list_size()); // Replace the last element.
+    lls.print_horizontally();
+
 }
+
+
