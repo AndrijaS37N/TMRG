@@ -4,13 +4,12 @@
 CMakeFiles/TMRG.dir/global/console_coloring.cpp.o: ../global/console_coloring.cpp
 CMakeFiles/TMRG.dir/global/console_coloring.cpp.o: ../global/console_coloring.h
 
+CMakeFiles/TMRG.dir/main.cpp.o: ../global/console_coloring.h
 CMakeFiles/TMRG.dir/main.cpp.o: ../main.cpp
 CMakeFiles/TMRG.dir/main.cpp.o: ../practice/linked_list.h
 CMakeFiles/TMRG.dir/main.cpp.o: ../practice/min_period.h
 
-CMakeFiles/TMRG.dir/practice/linked_list.cpp.o: ../global/console_coloring.h
 CMakeFiles/TMRG.dir/practice/linked_list.cpp.o: ../practice/linked_list.cpp
-CMakeFiles/TMRG.dir/practice/linked_list.cpp.o: ../practice/linked_list.h
 
 CMakeFiles/TMRG.dir/practice/min_period.cpp.o: ../global/console_coloring.h
 CMakeFiles/TMRG.dir/practice/min_period.cpp.o: ../practice/min_period.cpp

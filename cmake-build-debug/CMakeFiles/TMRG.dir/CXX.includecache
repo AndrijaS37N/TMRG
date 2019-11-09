@@ -8,7 +8,17 @@
 
 /Users/andrijadjuric/CLionProjects/TMRG/global/console_coloring.h
 
-/Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.cpp
+/Users/andrijadjuric/CLionProjects/TMRG/main.cpp
+practice/min_period.h
+/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.h
+practice/linked_list.h
+/Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.h
+thread
+-
+unistd.h
+-
+
+/Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.h
 ../global/console_coloring.h
 /Users/andrijadjuric/CLionProjects/TMRG/global/console_coloring.h
 linked_list.h
@@ -18,5 +28,9 @@ iostream
 string
 -
 
-/Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.h
+/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.h
+iostream
+-
+stack
+-
 
