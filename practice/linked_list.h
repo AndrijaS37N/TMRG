@@ -5,6 +5,7 @@
 #include "linked_list.h"
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -17,7 +18,8 @@ struct Node {
 template<typename T>
 class LinkedList { // TODO -> Learn more about Concepts, a C++20 feature. Also, more on Modules, Ranges and Coroutines.
 public:
-    explicit LinkedList(struct Node<T> *head, const char *linked_list_name) : head(head), linked_list_name(linked_list_name) {
+    explicit LinkedList(struct Node<T> *head, const char *linked_list_name) : head(head),
+                                                                              linked_list_name(linked_list_name) {
         list_size = 0;
     }
 
@@ -48,8 +50,9 @@ private:
     int list_size;
     struct Node<T> *head;
     const char *linked_list_name;
-    static int find_digits_length(short number);
-    static void print_width(const short &digits_length);
+    static unsigned long int find_digits_length(long int integer);
+    static unsigned long int find_digits_length_stringify(const T &data);
+    static void print_width(const unsigned long int &data_length);
     ~LinkedList();
 };
 
@@ -69,16 +72,16 @@ void LinkedList<T>::push(const T &data) {
 template<class T>
 void LinkedList<T>::print_vertically() {
     cout << "Vertical view:";
-    short digits_length;
+    unsigned long int element_length = 0;
     struct Node<T> *current = head;
     while (current) {
         cout << '\n';
-        digits_length = find_digits_length(current->data);
-        print_width(digits_length);
+        element_length = find_digits_length_stringify(current->data);
+        print_width(element_length);
         cout << '\n';
         cout << "| " << current->data << " |";
         cout << '\n';
-        print_width(digits_length);
+        print_width(element_length);
         cout << '\n';
         cout << "  |";
         cout << '\n';
@@ -100,16 +103,16 @@ void LinkedList<T>::print_horizontally() {
 }
 
 template<class T>
-int LinkedList<T>::find_digits_length(short number) {
+unsigned long int LinkedList<T>::find_digits_length(long int integer) {
     int length;
-    if (number > 0) {
-        for (length = 0; number > 0; length++)
-            number = number / 10;
+    if (integer > 0) {
+        for (length = 0; integer > 0; length++)
+            integer = integer / 10;
         length += 2;
     } else {
-        number = abs(number);
-        for (length = 0; number > 0; length++)
-            number = number / 10;
+        integer = abs(integer);
+        for (length = 0; integer > 0; length++)
+            integer = integer / 10;
         length += 3;
     }
 
@@ -117,13 +120,18 @@ int LinkedList<T>::find_digits_length(short number) {
 }
 
 template<class T>
-void LinkedList<T>::print_width(const short &digits_length) {
-    cout << ' ';
-    for (int i = 0; i < digits_length; ++i)
-        cout << '-';
+unsigned long int LinkedList<T>::find_digits_length_stringify(const T &data) {
+    ostringstream convert;
+    convert << data;
+    return convert.str().length() + 2;
 }
 
-// TODO -> WIP; Stringify the print_width function.
+template<class T>
+void LinkedList<T>::print_width(const unsigned long int &data_length) {
+    cout << ' ';
+    for (int i = 0; i < data_length; ++i)
+        cout << '-';
+}
 
 template<class T>
 const void LinkedList<T>::pop() {
@@ -247,19 +255,26 @@ template<class T>
 void LinkedList<T>::activate_task() {
     LinkedList lls(nullptr, "Linked List Structure");
     ConsoleColoring::cyan(lls.get_linked_list_name());
-    lls.push(14);
+    cout << '\n';
+    // This function won't work with a class template.
+    cout << "Result for find_digits_length(-13) is: " << lls.find_digits_length(-13) - 2 << endl;
+    lls.push(14.202);
     lls.push(-43);
     lls.push(32767);
+    lls.push('a');
     lls.push(000);
     lls.push(-1.121);
+    lls.push('s');
     lls.push(2);
+    // Example of a push in a LinkedList<string> would be lls.push("Hello!")
     cout << '\n';
     lls.print_vertically();
     cout << '\n';
     lls.print_horizontally();
     cout << "Size: " << lls.get_list_size() << endl;
 
-    for (int i = 0; i < 8; ++i)
+    const unsigned long int list_size_variable = lls.get_list_size();
+    for (int i = 0; i < list_size_variable + 4; ++i)
         lls.pop();
 
     lls.print_horizontally();

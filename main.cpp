@@ -57,7 +57,7 @@ int main() {
 
     cout << endl;
 
-    LinkedList<double>::activate_task(); // TODO -> Sorting; Stringify print_width function; Search.
+    LinkedList<double>::activate_task(); // TODO -> Sorting; Search.
 
     // TODO -> 👨‍🚀
 
