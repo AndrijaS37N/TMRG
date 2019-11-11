@@ -29,6 +29,8 @@ string
 -
 sstream
 -
+unistd.h
+-
 
 /Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.h
 iostream

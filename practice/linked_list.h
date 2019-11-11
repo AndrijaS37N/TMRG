@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <unistd.h>
 
 using namespace std;
 
@@ -26,12 +27,13 @@ public:
     void push(const T &data);
     const void pop();
     void reverse_list();
-    void print_vertically();
-    void print_horizontally();
-    struct Node<T> *get_element(const uint_fast16_t &index);
-    struct Node<T> *get_tail();
+    constexpr void print_vertically() const;
+    constexpr void print_horizontally() const;
+    struct Node<T> *get_element(const uint_fast16_t &index) const;
+    struct Node<T> *get_tail() const;
     void insert_at(struct Node<T> *insert_node, const uint_fast16_t &index);
     void replace_with(struct Node<T> *replace_node, const uint_fast16_t &index);
+    void search_elements(const T data);
     static void activate_task();
 
     const char *get_linked_list_name() const {
@@ -50,29 +52,17 @@ private:
     uint_fast16_t list_size;
     struct Node<T> *head;
     const char *linked_list_name;
-    static uint_fast16_t find_digits_length(int_fast16_t integer);
-    static uint_fast16_t find_digits_length_stringify(const T &data);
-    static void print_width(const uint_fast16_t &data_length);
+    inline static uint_fast16_t find_digits_length(int_fast16_t integer);
+    inline static uint_fast16_t find_digits_length_stringify(const T &data);
+    constexpr static void print_width(const uint_fast16_t &data_length);
+    void print_search_result(uint_fast16_t *result_indices, const uint_fast16_t &indices_count);
     ~LinkedList();
 };
 
-template<class T>
-void LinkedList<T>::push(const T &data) {
-    struct Node<T> *new_node = new Node<T>;
-    if (new_node == nullptr) // Always false?
-        ConsoleColoring::red("Memory allocation failed.");
-    else {
-        new_node->data = data;
-        new_node->next_node = head;
-        head = new_node;
-        list_size++;
-    }
-}
-
-template<class T>
-void LinkedList<T>::print_vertically() {
+template<typename T>
+constexpr void LinkedList<T>::print_vertically() const {
     cout << "Vertical view:";
-    unsigned long int element_length = 0;
+    uint_fast16_t element_length = 0;
     struct Node<T> *current = head;
     while (current) {
         cout << '\n';
@@ -91,8 +81,8 @@ void LinkedList<T>::print_vertically() {
     cout << endl << "nullptr" << endl;
 }
 
-template<class T>
-void LinkedList<T>::print_horizontally() {
+template<typename T>
+constexpr void LinkedList<T>::print_horizontally() const {
     cout << "Horizontal view: ";
     struct Node<T> *current = head;
     while (current) {
@@ -102,9 +92,9 @@ void LinkedList<T>::print_horizontally() {
     cout << "nullptr" << endl;
 }
 
-template<class T>
-uint_fast16_t LinkedList<T>::find_digits_length(int_fast16_t integer) {
-    int length;
+template<typename T>
+inline uint_fast16_t LinkedList<T>::find_digits_length(int_fast16_t integer) {
+    int length = 0;
     if (integer > 0) {
         for (length = 0; integer > 0; length++)
             integer = integer / 10;
@@ -115,25 +105,37 @@ uint_fast16_t LinkedList<T>::find_digits_length(int_fast16_t integer) {
             integer = integer / 10;
         length += 3;
     }
-
     return length;
 }
 
-template<class T>
-uint_fast16_t LinkedList<T>::find_digits_length_stringify(const T &data) {
+template<typename T>
+inline uint_fast16_t LinkedList<T>::find_digits_length_stringify(const T &data) {
     ostringstream convert;
     convert << data;
     return convert.str().length() + 2;
 }
 
-template<class T>
-void LinkedList<T>::print_width(const uint_fast16_t &data_length) {
+template<typename T>
+constexpr void LinkedList<T>::print_width(const uint_fast16_t &data_length) {
     cout << ' ';
     for (int i = 0; i < data_length; ++i)
         cout << '-';
 }
 
-template<class T>
+template<typename T>
+void LinkedList<T>::push(const T &data) {
+    struct Node<T> *new_node = new Node<T>;
+    if (new_node == nullptr) // Always false?
+        ConsoleColoring::red("Memory allocation failed.");
+    else {
+        new_node->data = data;
+        new_node->next_node = head;
+        head = new_node;
+        list_size++;
+    }
+}
+
+template<typename T>
 const void LinkedList<T>::pop() {
     if (head == nullptr)
         ConsoleColoring::yellow("Element not popped! Linked list has been emptied.");
@@ -144,7 +146,7 @@ const void LinkedList<T>::pop() {
     }
 }
 
-template<class T>
+template<typename T>
 void LinkedList<T>::reverse_list() {
     ConsoleColoring::blue("Reversing the list."); // Let's write down the example. The list is 4, 3, 2, 1.
     struct Node<T> *previous, *current, *next;
@@ -159,10 +161,10 @@ void LinkedList<T>::reverse_list() {
     head = previous; // Here is where to use that previous buffer Node.
 }
 
-template<class T>
-struct Node<T> *LinkedList<T>::get_element(const uint_fast16_t &index) {
+template<typename T>
+struct Node<T> *LinkedList<T>::get_element(const uint_fast16_t &index) const {
     struct Node<T> *current = head;
-    int counter = 0;
+    uint_fast16_t counter = 0;
     while (current != nullptr) {
         if (counter == index)
             return current;
@@ -173,8 +175,8 @@ struct Node<T> *LinkedList<T>::get_element(const uint_fast16_t &index) {
     assert(0);
 }
 
-template<class T>
-struct Node<T> *LinkedList<T>::get_tail() {
+template<typename T>
+struct Node<T> *LinkedList<T>::get_tail() const {
     struct Node<T> *current = head;
     while (current) {
         current = current->next_node;
@@ -185,11 +187,11 @@ struct Node<T> *LinkedList<T>::get_tail() {
     assert(0);
 }
 
-template<class T>
+template<typename T>
 void LinkedList<T>::insert_at(struct Node<T> *insert_node, const uint_fast16_t &index) {
     struct Node<T> *current = head;
     struct Node<T> *previous = nullptr;
-    int counter = 0;
+    uint_fast16_t counter = 0;
     while (current) {
         if (counter == index) {
             if (previous == nullptr) { // For the first one.
@@ -217,11 +219,11 @@ void LinkedList<T>::insert_at(struct Node<T> *insert_node, const uint_fast16_t &
     ConsoleColoring::red("New element not inserted.");
 }
 
-template<class T>
+template<typename T>
 void LinkedList<T>::replace_with(struct Node<T> *replace_node, const uint_fast16_t &index) {
     struct Node<T> *current = head;
     struct Node<T> *previous = nullptr;
-    int counter = 0;
+    uint_fast16_t counter = 0;
     while (current) {
         previous = current;
         current = current->next_node;
@@ -236,25 +238,53 @@ void LinkedList<T>::replace_with(struct Node<T> *replace_node, const uint_fast16
     ConsoleColoring::red("Element not replaced.");
 }
 
-template<class T>
+template<typename T>
+void LinkedList<T>::search_elements(const T data) {
+    ConsoleColoring::blue("Searching for the element.");
+    ConsoleColoring::yellow(to_string(data).c_str()); // Use the c_str function to convert a string to a char *array.
+    struct Node<T> *current = head;
+    uint_fast16_t indices_count = 0;
+    uint_fast16_t counter = 0;
+    uint_fast16_t *result_indices = (uint_fast16_t *) malloc(sizeof(data));
+    while (current) {
+        if (current->data == data) {
+            result_indices = (uint_fast16_t *) realloc(result_indices, sizeof(data) * indices_count);
+            result_indices[indices_count] = counter;
+            indices_count++;
+        }
+        current = current->next_node;
+        counter++;
+    }
+    print_search_result(result_indices, indices_count);
+    free(result_indices);
+}
+
+template<typename T>
+void LinkedList<T>::print_search_result(uint_fast16_t *result_indices, const uint_fast16_t &indices_count) {
+    cout << "Search result indices: ";
+    for (auto i = 0; i < indices_count; ++i)
+        cout << result_indices[i] << ' ';
+
+    cout << '\n';
+}
+
+template<typename T>
 LinkedList<T>::~LinkedList() {
     struct Node<T> *current = head;
     struct Node<T> *previous = nullptr;
-    int c = 0;
     while (current) {
         previous = current;
         current = current->next_node;
         delete previous;
-        c++;
     }
     delete current; // This should at his point of execution be nullptr.
     ConsoleColoring::blue("Destructor finished deleting nodes.");
     cout << '\n';
 }
 
-template<class T>
+template<typename T>
 void LinkedList<T>::activate_task() {
-    LinkedList lls(nullptr, "Linked List Structure");
+    LinkedList lls(nullptr, "Linked List (uint_fast16_t) Structure");
     ConsoleColoring::cyan(lls.get_linked_list_name());
     cout << '\n';
     // This function won't work with a class template.
@@ -313,6 +343,14 @@ void LinkedList<T>::activate_task() {
     replace_node->data = -50;
     lls.replace_with(replace_node, lls.get_list_size()); // Replace the last element.
     lls.print_horizontally();
+
+    // Search element 2 and find the indices of element 2 in the list.
+    for (short j = 1; j <= 3; ++j)
+        lls.push(2);
+
+    lls.print_horizontally();
+    lls.search_elements(2);
+    lls.search_elements(-50);
 
     cout << '\n';
 }

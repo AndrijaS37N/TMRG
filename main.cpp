@@ -53,11 +53,13 @@ int main() {
         /*
          * Linked list custom structure made.
         */
+
+        // TODO -> Working. 👨‍🚀
     }
 
     cout << endl;
 
-    // TODO -> Sorting; Search.
+    // TODO -> Sorting.
 
     LinkedList<double>::activate_task();
 
@@ -70,8 +72,6 @@ int main() {
 
     // For string types push inputs must be changed in the activate_task function. 👇
     // LinkedList<string>::activate_task();
-
-    // TODO -> 👨‍🚀
 
     return 0;
 }
