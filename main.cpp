@@ -57,7 +57,19 @@ int main() {
 
     cout << endl;
 
-    LinkedList<double>::activate_task(); // TODO -> Sorting; Search.
+    // TODO -> Sorting; Search.
+
+    LinkedList<double>::activate_task();
+
+    // All of these test cases work. 👇
+    // LinkedList<char>::activate_task();
+    // LinkedList<int>::activate_task();
+    // LinkedList<uint_least64_t>::activate_task();
+    // LinkedList<u_int64_t>::activate_task();
+    // LinkedList<uintmax_t>::activate_task();
+
+    // For string types push inputs must be changed in the activate_task function. 👇
+    // LinkedList<string>::activate_task();
 
     // TODO -> 👨‍🚀
 

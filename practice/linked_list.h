@@ -28,17 +28,17 @@ public:
     void reverse_list();
     void print_vertically();
     void print_horizontally();
-    struct Node<T> *get_element(const uint64_t &index);
+    struct Node<T> *get_element(const uint_fast16_t &index);
     struct Node<T> *get_tail();
-    void insert_at(struct Node<T> *insert_node, const uint64_t &index);
-    void replace_with(struct Node<T> *replace_node, const uint64_t &index);
+    void insert_at(struct Node<T> *insert_node, const uint_fast16_t &index);
+    void replace_with(struct Node<T> *replace_node, const uint_fast16_t &index);
     static void activate_task();
 
     const char *get_linked_list_name() const {
         return linked_list_name;
     }
 
-    uint64_t get_list_size() const {
+    uint_fast16_t get_list_size() const {
         return list_size;
     }
 
@@ -47,12 +47,12 @@ public:
     }
 
 private:
-    uint64_t list_size;
+    uint_fast16_t list_size;
     struct Node<T> *head;
     const char *linked_list_name;
-    static uint64_t find_digits_length(int64_t integer);
-    static uint64_t find_digits_length_stringify(const T &data);
-    static void print_width(const uint64_t &data_length);
+    static uint_fast16_t find_digits_length(int_fast16_t integer);
+    static uint_fast16_t find_digits_length_stringify(const T &data);
+    static void print_width(const uint_fast16_t &data_length);
     ~LinkedList();
 };
 
@@ -103,7 +103,7 @@ void LinkedList<T>::print_horizontally() {
 }
 
 template<class T>
-uint64_t LinkedList<T>::find_digits_length(int64_t integer) {
+uint_fast16_t LinkedList<T>::find_digits_length(int_fast16_t integer) {
     int length;
     if (integer > 0) {
         for (length = 0; integer > 0; length++)
@@ -120,14 +120,14 @@ uint64_t LinkedList<T>::find_digits_length(int64_t integer) {
 }
 
 template<class T>
-uint64_t LinkedList<T>::find_digits_length_stringify(const T &data) {
+uint_fast16_t LinkedList<T>::find_digits_length_stringify(const T &data) {
     ostringstream convert;
     convert << data;
     return convert.str().length() + 2;
 }
 
 template<class T>
-void LinkedList<T>::print_width(const uint64_t &data_length) {
+void LinkedList<T>::print_width(const uint_fast16_t &data_length) {
     cout << ' ';
     for (int i = 0; i < data_length; ++i)
         cout << '-';
@@ -160,7 +160,7 @@ void LinkedList<T>::reverse_list() {
 }
 
 template<class T>
-struct Node<T> *LinkedList<T>::get_element(const uint64_t &index) {
+struct Node<T> *LinkedList<T>::get_element(const uint_fast16_t &index) {
     struct Node<T> *current = head;
     int counter = 0;
     while (current != nullptr) {
@@ -186,7 +186,7 @@ struct Node<T> *LinkedList<T>::get_tail() {
 }
 
 template<class T>
-void LinkedList<T>::insert_at(struct Node<T> *insert_node, const uint64_t &index) {
+void LinkedList<T>::insert_at(struct Node<T> *insert_node, const uint_fast16_t &index) {
     struct Node<T> *current = head;
     struct Node<T> *previous = nullptr;
     int counter = 0;
@@ -218,7 +218,7 @@ void LinkedList<T>::insert_at(struct Node<T> *insert_node, const uint64_t &index
 }
 
 template<class T>
-void LinkedList<T>::replace_with(struct Node<T> *replace_node, const uint64_t &index) {
+void LinkedList<T>::replace_with(struct Node<T> *replace_node, const uint_fast16_t &index) {
     struct Node<T> *current = head;
     struct Node<T> *previous = nullptr;
     int counter = 0;
@@ -249,6 +249,7 @@ LinkedList<T>::~LinkedList() {
     }
     delete current; // This should at his point of execution be nullptr.
     ConsoleColoring::blue("Destructor finished deleting nodes.");
+    cout << '\n';
 }
 
 template<class T>
@@ -273,7 +274,7 @@ void LinkedList<T>::activate_task() {
     lls.print_horizontally();
     cout << "Size: " << lls.get_list_size() << endl;
 
-    const unsigned long int list_size_variable = lls.get_list_size();
+    const atomic_uint_fast16_t list_size_variable = lls.get_list_size();
     for (int i = 0; i < list_size_variable + 4; ++i)
         lls.pop();
 
@@ -312,6 +313,8 @@ void LinkedList<T>::activate_task() {
     replace_node->data = -50;
     lls.replace_with(replace_node, lls.get_list_size()); // Replace the last element.
     lls.print_horizontally();
+
+    cout << '\n';
 }
 
 #endif // TMRG_LINKED_LIST_H
