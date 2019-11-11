@@ -28,17 +28,17 @@ public:
     void reverse_list();
     void print_vertically();
     void print_horizontally();
-    struct Node<T> *get_element(const unsigned short &index);
+    struct Node<T> *get_element(const uint64_t &index);
     struct Node<T> *get_tail();
-    void insert_at(struct Node<T> *insert_node, const unsigned short &index);
-    void replace_with(struct Node<T> *replace_node, const unsigned short &index);
+    void insert_at(struct Node<T> *insert_node, const uint64_t &index);
+    void replace_with(struct Node<T> *replace_node, const uint64_t &index);
     static void activate_task();
 
     const char *get_linked_list_name() const {
         return linked_list_name;
     }
 
-    int get_list_size() const {
+    uint64_t get_list_size() const {
         return list_size;
     }
 
@@ -47,12 +47,12 @@ public:
     }
 
 private:
-    int list_size;
+    uint64_t list_size;
     struct Node<T> *head;
     const char *linked_list_name;
-    static unsigned long int find_digits_length(long int integer);
-    static unsigned long int find_digits_length_stringify(const T &data);
-    static void print_width(const unsigned long int &data_length);
+    static uint64_t find_digits_length(int64_t integer);
+    static uint64_t find_digits_length_stringify(const T &data);
+    static void print_width(const uint64_t &data_length);
     ~LinkedList();
 };
 
@@ -103,7 +103,7 @@ void LinkedList<T>::print_horizontally() {
 }
 
 template<class T>
-unsigned long int LinkedList<T>::find_digits_length(long int integer) {
+uint64_t LinkedList<T>::find_digits_length(int64_t integer) {
     int length;
     if (integer > 0) {
         for (length = 0; integer > 0; length++)
@@ -120,14 +120,14 @@ unsigned long int LinkedList<T>::find_digits_length(long int integer) {
 }
 
 template<class T>
-unsigned long int LinkedList<T>::find_digits_length_stringify(const T &data) {
+uint64_t LinkedList<T>::find_digits_length_stringify(const T &data) {
     ostringstream convert;
     convert << data;
     return convert.str().length() + 2;
 }
 
 template<class T>
-void LinkedList<T>::print_width(const unsigned long int &data_length) {
+void LinkedList<T>::print_width(const uint64_t &data_length) {
     cout << ' ';
     for (int i = 0; i < data_length; ++i)
         cout << '-';
@@ -160,7 +160,7 @@ void LinkedList<T>::reverse_list() {
 }
 
 template<class T>
-struct Node<T> *LinkedList<T>::get_element(const unsigned short &index) {
+struct Node<T> *LinkedList<T>::get_element(const uint64_t &index) {
     struct Node<T> *current = head;
     int counter = 0;
     while (current != nullptr) {
@@ -186,7 +186,7 @@ struct Node<T> *LinkedList<T>::get_tail() {
 }
 
 template<class T>
-void LinkedList<T>::insert_at(struct Node<T> *insert_node, const unsigned short &index) {
+void LinkedList<T>::insert_at(struct Node<T> *insert_node, const uint64_t &index) {
     struct Node<T> *current = head;
     struct Node<T> *previous = nullptr;
     int counter = 0;
@@ -218,7 +218,7 @@ void LinkedList<T>::insert_at(struct Node<T> *insert_node, const unsigned short 
 }
 
 template<class T>
-void LinkedList<T>::replace_with(struct Node<T> *replace_node, const unsigned short &index) {
+void LinkedList<T>::replace_with(struct Node<T> *replace_node, const uint64_t &index) {
     struct Node<T> *current = head;
     struct Node<T> *previous = nullptr;
     int counter = 0;
