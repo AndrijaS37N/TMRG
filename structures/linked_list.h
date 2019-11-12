@@ -7,6 +7,7 @@
 #include <string>
 #include <sstream>
 #include <math.h>
+#include "../math/operation.h"
 
 using namespace std;
 
@@ -66,15 +67,18 @@ void LinkedList<T>::print_vertically() const {
     struct Node<T> *current = head;
     while (current) {
         cout << '\n';
-        try {
-            // TODO -> Make your own math functions, if possible.
-            if (floor(abs(current->data)) == current->data)  // There is a is_integral function that checks this as well.
-                element_length = find_digits_length(current->data);
-            else {
-                element_length = find_digits_length_stringify(current->data);
-                throw false; // Element not an integer.
-            }
-        } catch (bool thrown) {}
+        // try {
+        //     if (floor(abs(current->data)) == current->data)
+        //         element_length = find_digits_length(current->data);
+        //     else {
+        //         element_length = find_digits_length_stringify(current->data);
+        //         throw false; // Element not an integer.
+        //     }
+        // } catch (bool thrown) {}
+
+        /// FIX THIS.
+
+        // is_arithmetic<double>::value
         print_width(element_length);
         cout << '\n';
         cout << "| " << current->data << " |";

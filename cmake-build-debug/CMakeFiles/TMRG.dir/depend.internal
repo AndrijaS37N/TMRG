@@ -7,8 +7,11 @@ CMakeFiles/TMRG.dir/global/console_coloring.cpp.o
 CMakeFiles/TMRG.dir/main.cpp.o
  /Users/andrijadjuric/CLionProjects/TMRG/global/console_coloring.h
  /Users/andrijadjuric/CLionProjects/TMRG/main.cpp
+ /Users/andrijadjuric/CLionProjects/TMRG/math/operation.h
  /Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.h
  /Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.h
+CMakeFiles/TMRG.dir/math/operation.cpp.o
+ /Users/andrijadjuric/CLionProjects/TMRG/math/operation.cpp
 CMakeFiles/TMRG.dir/structures/linked_list.cpp.o
  /Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.cpp
 CMakeFiles/TMRG.dir/tasks/min_period.cpp.o

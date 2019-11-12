@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/andrijadjuric/CLionProjects/TMRG/global/console_coloring.cpp" "/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles/TMRG.dir/global/console_coloring.cpp.o"
   "/Users/andrijadjuric/CLionProjects/TMRG/main.cpp" "/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles/TMRG.dir/main.cpp.o"
+  "/Users/andrijadjuric/CLionProjects/TMRG/math/operation.cpp" "/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles/TMRG.dir/math/operation.cpp.o"
   "/Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.cpp" "/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles/TMRG.dir/structures/linked_list.cpp.o"
   "/Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.cpp" "/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles/TMRG.dir/tasks/min_period.cpp.o"
   "/Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period_alt.cpp" "/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.o"

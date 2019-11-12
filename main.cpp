@@ -2,6 +2,7 @@
 #include "structures/linked_list.h"
 #include <thread>
 #include <unistd.h>
+#include "math/operation.h"
 
 #define TASK_SWITCH 0
 
@@ -61,7 +62,11 @@ int main() {
 
     // TODO -> Sortable functions.
 
-    LinkedList<double>::activate_task();
+    /// FIX THIS.
+    // LinkedList<string>::activate_task();
+
+    int a = -2;
+    cout << Operation::abs(a) << endl;
 
     // All of these test cases work. 👇
     // LinkedList<char>::activate_task();

@@ -177,6 +177,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+math/operation.o: math/operation.cpp.o
+
+.PHONY : math/operation.o
+
+# target to build an object file
+math/operation.cpp.o:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/math/operation.cpp.o
+.PHONY : math/operation.cpp.o
+
+math/operation.i: math/operation.cpp.i
+
+.PHONY : math/operation.i
+
+# target to preprocess a source file
+math/operation.cpp.i:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/math/operation.cpp.i
+.PHONY : math/operation.cpp.i
+
+math/operation.s: math/operation.cpp.s
+
+.PHONY : math/operation.s
+
+# target to generate assembly for a file
+math/operation.cpp.s:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/math/operation.cpp.s
+.PHONY : math/operation.cpp.s
+
 structures/linked_list.o: structures/linked_list.cpp.o
 
 .PHONY : structures/linked_list.o
@@ -273,6 +300,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... math/operation.o"
+	@echo "... math/operation.i"
+	@echo "... math/operation.s"
 	@echo "... structures/linked_list.o"
 	@echo "... structures/linked_list.i"
 	@echo "... structures/linked_list.s"

@@ -91,6 +91,12 @@
 		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/main.cpp">
 			<Option target="TMRG"/>
 		</Unit>
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/math/operation.cpp">
+			<Option target="TMRG"/>
+		</Unit>
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/math/operation.h">
+			<Option target="TMRG"/>
+		</Unit>
 		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.cpp">
 			<Option target="TMRG"/>
 		</Unit>

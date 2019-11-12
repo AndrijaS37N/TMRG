@@ -17,6 +17,22 @@ thread
 -
 unistd.h
 -
+math/operation.h
+/Users/andrijadjuric/CLionProjects/TMRG/math/operation.h
+
+/Users/andrijadjuric/CLionProjects/TMRG/math/operation.h
+../global/console_coloring.h
+/Users/andrijadjuric/CLionProjects/TMRG/global/console_coloring.h
+type_traits
+-
+sstream
+-
+string
+-
+math.h
+-
+utility
+-
 
 /Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.h
 ../global/console_coloring.h
@@ -31,6 +47,8 @@ sstream
 -
 math.h
 -
+../math/operation.h
+/Users/andrijadjuric/CLionProjects/TMRG/math/operation.h
 
 /Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.h
 iostream
