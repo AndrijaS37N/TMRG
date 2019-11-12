@@ -9,34 +9,30 @@
 /Users/andrijadjuric/CLionProjects/TMRG/global/console_coloring.h
 
 /Users/andrijadjuric/CLionProjects/TMRG/main.cpp
-practice/min_period.h
-/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.h
-practice/linked_list.h
-/Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.h
+tasks/min_period.h
+/Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.h
+structures/linked_list.h
+/Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.h
 thread
 -
 unistd.h
 -
-math.h
--
 
-/Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.h
+/Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.h
 ../global/console_coloring.h
 /Users/andrijadjuric/CLionProjects/TMRG/global/console_coloring.h
 linked_list.h
-/Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.h
+/Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.h
 iostream
 -
 string
 -
 sstream
 -
-unistd.h
--
 math.h
 -
 
-/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.h
+/Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.h
 iostream
 -
 stack

@@ -91,22 +91,22 @@
 		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/main.cpp">
 			<Option target="TMRG"/>
 		</Unit>
-		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.cpp">
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.cpp">
 			<Option target="TMRG"/>
 		</Unit>
-		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.h">
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.h">
 			<Option target="TMRG"/>
 		</Unit>
-		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.cpp">
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.cpp">
 			<Option target="TMRG"/>
 		</Unit>
-		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.h">
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.h">
 			<Option target="TMRG"/>
 		</Unit>
-		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period_alt.cpp">
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period_alt.cpp">
 			<Option target="TMRG"/>
 		</Unit>
-		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/practice/min_period_alt.h">
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period_alt.h">
 			<Option target="TMRG"/>
 		</Unit>
 		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/CMakeLists.txt">

@@ -6,7 +6,6 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <unistd.h>
 #include <math.h>
 
 using namespace std;
@@ -18,7 +17,7 @@ struct Node {
 };
 
 template<typename T>
-class LinkedList { // TODO -> Learn more about Concepts, a C++20 feature. Also, more on Modules, Ranges and Coroutines.
+class LinkedList {
 public:
     explicit LinkedList(struct Node<T> *head, const char *linked_list_name) : head(head),
                                                                               linked_list_name(linked_list_name) {
@@ -68,6 +67,7 @@ void LinkedList<T>::print_vertically() const {
     while (current) {
         cout << '\n';
         try {
+            // TODO -> Make your own math functions, if possible.
             if (floor(abs(current->data)) == current->data)  // There is a is_integral function that checks this as well.
                 element_length = find_digits_length(current->data);
             else {
@@ -294,7 +294,6 @@ template<typename T>
 void LinkedList<T>::activate_task() {
     LinkedList lls(nullptr, "Linked List (uint_fast16_t) Structure");
     ConsoleColoring::cyan(lls.get_linked_list_name());
-    cout << '\n';
     lls.push(14.202);
     lls.push(-43);
     lls.push(32767);

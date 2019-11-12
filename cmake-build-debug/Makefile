@@ -177,86 +177,86 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-practice/linked_list.o: practice/linked_list.cpp.o
+structures/linked_list.o: structures/linked_list.cpp.o
 
-.PHONY : practice/linked_list.o
-
-# target to build an object file
-practice/linked_list.cpp.o:
-	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/linked_list.cpp.o
-.PHONY : practice/linked_list.cpp.o
-
-practice/linked_list.i: practice/linked_list.cpp.i
-
-.PHONY : practice/linked_list.i
-
-# target to preprocess a source file
-practice/linked_list.cpp.i:
-	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/linked_list.cpp.i
-.PHONY : practice/linked_list.cpp.i
-
-practice/linked_list.s: practice/linked_list.cpp.s
-
-.PHONY : practice/linked_list.s
-
-# target to generate assembly for a file
-practice/linked_list.cpp.s:
-	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/linked_list.cpp.s
-.PHONY : practice/linked_list.cpp.s
-
-practice/min_period.o: practice/min_period.cpp.o
-
-.PHONY : practice/min_period.o
+.PHONY : structures/linked_list.o
 
 # target to build an object file
-practice/min_period.cpp.o:
-	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/min_period.cpp.o
-.PHONY : practice/min_period.cpp.o
+structures/linked_list.cpp.o:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/structures/linked_list.cpp.o
+.PHONY : structures/linked_list.cpp.o
 
-practice/min_period.i: practice/min_period.cpp.i
+structures/linked_list.i: structures/linked_list.cpp.i
 
-.PHONY : practice/min_period.i
+.PHONY : structures/linked_list.i
 
 # target to preprocess a source file
-practice/min_period.cpp.i:
-	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/min_period.cpp.i
-.PHONY : practice/min_period.cpp.i
+structures/linked_list.cpp.i:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/structures/linked_list.cpp.i
+.PHONY : structures/linked_list.cpp.i
 
-practice/min_period.s: practice/min_period.cpp.s
+structures/linked_list.s: structures/linked_list.cpp.s
 
-.PHONY : practice/min_period.s
+.PHONY : structures/linked_list.s
 
 # target to generate assembly for a file
-practice/min_period.cpp.s:
-	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/min_period.cpp.s
-.PHONY : practice/min_period.cpp.s
+structures/linked_list.cpp.s:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/structures/linked_list.cpp.s
+.PHONY : structures/linked_list.cpp.s
 
-practice/min_period_alt.o: practice/min_period_alt.cpp.o
+tasks/min_period.o: tasks/min_period.cpp.o
 
-.PHONY : practice/min_period_alt.o
+.PHONY : tasks/min_period.o
 
 # target to build an object file
-practice/min_period_alt.cpp.o:
-	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.o
-.PHONY : practice/min_period_alt.cpp.o
+tasks/min_period.cpp.o:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/tasks/min_period.cpp.o
+.PHONY : tasks/min_period.cpp.o
 
-practice/min_period_alt.i: practice/min_period_alt.cpp.i
+tasks/min_period.i: tasks/min_period.cpp.i
 
-.PHONY : practice/min_period_alt.i
+.PHONY : tasks/min_period.i
 
 # target to preprocess a source file
-practice/min_period_alt.cpp.i:
-	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.i
-.PHONY : practice/min_period_alt.cpp.i
+tasks/min_period.cpp.i:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/tasks/min_period.cpp.i
+.PHONY : tasks/min_period.cpp.i
 
-practice/min_period_alt.s: practice/min_period_alt.cpp.s
+tasks/min_period.s: tasks/min_period.cpp.s
 
-.PHONY : practice/min_period_alt.s
+.PHONY : tasks/min_period.s
 
 # target to generate assembly for a file
-practice/min_period_alt.cpp.s:
-	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.s
-.PHONY : practice/min_period_alt.cpp.s
+tasks/min_period.cpp.s:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/tasks/min_period.cpp.s
+.PHONY : tasks/min_period.cpp.s
+
+tasks/min_period_alt.o: tasks/min_period_alt.cpp.o
+
+.PHONY : tasks/min_period_alt.o
+
+# target to build an object file
+tasks/min_period_alt.cpp.o:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.o
+.PHONY : tasks/min_period_alt.cpp.o
+
+tasks/min_period_alt.i: tasks/min_period_alt.cpp.i
+
+.PHONY : tasks/min_period_alt.i
+
+# target to preprocess a source file
+tasks/min_period_alt.cpp.i:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.i
+.PHONY : tasks/min_period_alt.cpp.i
+
+tasks/min_period_alt.s: tasks/min_period_alt.cpp.s
+
+.PHONY : tasks/min_period_alt.s
+
+# target to generate assembly for a file
+tasks/min_period_alt.cpp.s:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.s
+.PHONY : tasks/min_period_alt.cpp.s
 
 # Help Target
 help:
@@ -273,15 +273,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... practice/linked_list.o"
-	@echo "... practice/linked_list.i"
-	@echo "... practice/linked_list.s"
-	@echo "... practice/min_period.o"
-	@echo "... practice/min_period.i"
-	@echo "... practice/min_period.s"
-	@echo "... practice/min_period_alt.o"
-	@echo "... practice/min_period_alt.i"
-	@echo "... practice/min_period_alt.s"
+	@echo "... structures/linked_list.o"
+	@echo "... structures/linked_list.i"
+	@echo "... structures/linked_list.s"
+	@echo "... tasks/min_period.o"
+	@echo "... tasks/min_period.i"
+	@echo "... tasks/min_period.s"
+	@echo "... tasks/min_period_alt.o"
+	@echo "... tasks/min_period_alt.i"
+	@echo "... tasks/min_period_alt.s"
 .PHONY : help
 
 

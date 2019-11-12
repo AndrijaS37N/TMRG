@@ -70,44 +70,44 @@ CMakeFiles/TMRG.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TMRG.dir/main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/andrijadjuric/CLionProjects/TMRG/main.cpp -o CMakeFiles/TMRG.dir/main.cpp.s
 
-CMakeFiles/TMRG.dir/practice/min_period.cpp.o: CMakeFiles/TMRG.dir/flags.make
-CMakeFiles/TMRG.dir/practice/min_period.cpp.o: ../practice/min_period.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TMRG.dir/practice/min_period.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TMRG.dir/practice/min_period.cpp.o -c /Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.cpp
+CMakeFiles/TMRG.dir/tasks/min_period.cpp.o: CMakeFiles/TMRG.dir/flags.make
+CMakeFiles/TMRG.dir/tasks/min_period.cpp.o: ../tasks/min_period.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TMRG.dir/tasks/min_period.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TMRG.dir/tasks/min_period.cpp.o -c /Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.cpp
 
-CMakeFiles/TMRG.dir/practice/min_period.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TMRG.dir/practice/min_period.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.cpp > CMakeFiles/TMRG.dir/practice/min_period.cpp.i
+CMakeFiles/TMRG.dir/tasks/min_period.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TMRG.dir/tasks/min_period.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.cpp > CMakeFiles/TMRG.dir/tasks/min_period.cpp.i
 
-CMakeFiles/TMRG.dir/practice/min_period.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TMRG.dir/practice/min_period.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.cpp -o CMakeFiles/TMRG.dir/practice/min_period.cpp.s
+CMakeFiles/TMRG.dir/tasks/min_period.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TMRG.dir/tasks/min_period.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.cpp -o CMakeFiles/TMRG.dir/tasks/min_period.cpp.s
 
-CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.o: CMakeFiles/TMRG.dir/flags.make
-CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.o: ../practice/min_period_alt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.o -c /Users/andrijadjuric/CLionProjects/TMRG/practice/min_period_alt.cpp
+CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.o: CMakeFiles/TMRG.dir/flags.make
+CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.o: ../tasks/min_period_alt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.o -c /Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period_alt.cpp
 
-CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/andrijadjuric/CLionProjects/TMRG/practice/min_period_alt.cpp > CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.i
+CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period_alt.cpp > CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.i
 
-CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/andrijadjuric/CLionProjects/TMRG/practice/min_period_alt.cpp -o CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.s
+CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period_alt.cpp -o CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.s
 
-CMakeFiles/TMRG.dir/practice/linked_list.cpp.o: CMakeFiles/TMRG.dir/flags.make
-CMakeFiles/TMRG.dir/practice/linked_list.cpp.o: ../practice/linked_list.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TMRG.dir/practice/linked_list.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TMRG.dir/practice/linked_list.cpp.o -c /Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.cpp
+CMakeFiles/TMRG.dir/structures/linked_list.cpp.o: CMakeFiles/TMRG.dir/flags.make
+CMakeFiles/TMRG.dir/structures/linked_list.cpp.o: ../structures/linked_list.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TMRG.dir/structures/linked_list.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TMRG.dir/structures/linked_list.cpp.o -c /Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.cpp
 
-CMakeFiles/TMRG.dir/practice/linked_list.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TMRG.dir/practice/linked_list.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.cpp > CMakeFiles/TMRG.dir/practice/linked_list.cpp.i
+CMakeFiles/TMRG.dir/structures/linked_list.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TMRG.dir/structures/linked_list.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.cpp > CMakeFiles/TMRG.dir/structures/linked_list.cpp.i
 
-CMakeFiles/TMRG.dir/practice/linked_list.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TMRG.dir/practice/linked_list.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.cpp -o CMakeFiles/TMRG.dir/practice/linked_list.cpp.s
+CMakeFiles/TMRG.dir/structures/linked_list.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TMRG.dir/structures/linked_list.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.cpp -o CMakeFiles/TMRG.dir/structures/linked_list.cpp.s
 
 CMakeFiles/TMRG.dir/global/console_coloring.cpp.o: CMakeFiles/TMRG.dir/flags.make
 CMakeFiles/TMRG.dir/global/console_coloring.cpp.o: ../global/console_coloring.cpp
@@ -125,18 +125,18 @@ CMakeFiles/TMRG.dir/global/console_coloring.cpp.s: cmake_force
 # Object files for target TMRG
 TMRG_OBJECTS = \
 "CMakeFiles/TMRG.dir/main.cpp.o" \
-"CMakeFiles/TMRG.dir/practice/min_period.cpp.o" \
-"CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.o" \
-"CMakeFiles/TMRG.dir/practice/linked_list.cpp.o" \
+"CMakeFiles/TMRG.dir/tasks/min_period.cpp.o" \
+"CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.o" \
+"CMakeFiles/TMRG.dir/structures/linked_list.cpp.o" \
 "CMakeFiles/TMRG.dir/global/console_coloring.cpp.o"
 
 # External object files for target TMRG
 TMRG_EXTERNAL_OBJECTS =
 
 TMRG: CMakeFiles/TMRG.dir/main.cpp.o
-TMRG: CMakeFiles/TMRG.dir/practice/min_period.cpp.o
-TMRG: CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.o
-TMRG: CMakeFiles/TMRG.dir/practice/linked_list.cpp.o
+TMRG: CMakeFiles/TMRG.dir/tasks/min_period.cpp.o
+TMRG: CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.o
+TMRG: CMakeFiles/TMRG.dir/structures/linked_list.cpp.o
 TMRG: CMakeFiles/TMRG.dir/global/console_coloring.cpp.o
 TMRG: CMakeFiles/TMRG.dir/build.make
 TMRG: CMakeFiles/TMRG.dir/link.txt

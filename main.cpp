@@ -1,8 +1,7 @@
-#include "practice/min_period.h"
-#include "practice/linked_list.h"
+#include "tasks/min_period.h"
+#include "structures/linked_list.h"
 #include <thread>
 #include <unistd.h>
-#include <math.h>
 
 #define TASK_SWITCH 0
 
@@ -55,12 +54,12 @@ int main() {
          * Linked list custom structure made.
         */
 
-        // TODO -> Working. 👨‍🚀
+        // TODO -> 👨‍🚀
     }
 
     cout << endl;
 
-    // TODO -> Sorting.
+    // TODO -> Sortable functions.
 
     LinkedList<double>::activate_task();
 
@@ -73,6 +72,8 @@ int main() {
 
     // For string types push inputs must be changed in the activate_task function. 👇
     // LinkedList<string>::activate_task();
+
+    // TODO -> Learn more about Concepts, a C++20 feature. Also, more on Modules, Ranges and Coroutines.
 
     return 0;
 }

@@ -6,15 +6,15 @@ CMakeFiles/TMRG.dir/global/console_coloring.cpp.o: ../global/console_coloring.h
 
 CMakeFiles/TMRG.dir/main.cpp.o: ../global/console_coloring.h
 CMakeFiles/TMRG.dir/main.cpp.o: ../main.cpp
-CMakeFiles/TMRG.dir/main.cpp.o: ../practice/linked_list.h
-CMakeFiles/TMRG.dir/main.cpp.o: ../practice/min_period.h
+CMakeFiles/TMRG.dir/main.cpp.o: ../structures/linked_list.h
+CMakeFiles/TMRG.dir/main.cpp.o: ../tasks/min_period.h
 
-CMakeFiles/TMRG.dir/practice/linked_list.cpp.o: ../practice/linked_list.cpp
+CMakeFiles/TMRG.dir/structures/linked_list.cpp.o: ../structures/linked_list.cpp
 
-CMakeFiles/TMRG.dir/practice/min_period.cpp.o: ../global/console_coloring.h
-CMakeFiles/TMRG.dir/practice/min_period.cpp.o: ../practice/min_period.cpp
-CMakeFiles/TMRG.dir/practice/min_period.cpp.o: ../practice/min_period.h
+CMakeFiles/TMRG.dir/tasks/min_period.cpp.o: ../global/console_coloring.h
+CMakeFiles/TMRG.dir/tasks/min_period.cpp.o: ../tasks/min_period.cpp
+CMakeFiles/TMRG.dir/tasks/min_period.cpp.o: ../tasks/min_period.h
 
-CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.o: ../practice/min_period_alt.cpp
-CMakeFiles/TMRG.dir/practice/min_period_alt.cpp.o: ../practice/min_period_alt.h
+CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.o: ../tasks/min_period_alt.cpp
+CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.o: ../tasks/min_period_alt.h
 

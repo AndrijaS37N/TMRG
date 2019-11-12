@@ -3,4 +3,4 @@ project(TMRG)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(TMRG main.cpp practice/min_period.cpp practice/min_period.h practice/min_period_alt.cpp practice/min_period_alt.h practice/linked_list.cpp practice/linked_list.h global/console_coloring.cpp global/console_coloring.h)
+add_executable(TMRG main.cpp tasks/min_period.cpp tasks/min_period.h tasks/min_period_alt.cpp tasks/min_period_alt.h structures/linked_list.cpp structures/linked_list.h global/console_coloring.cpp global/console_coloring.h)
