@@ -2,6 +2,7 @@
 #include "practice/linked_list.h"
 #include <thread>
 #include <unistd.h>
+#include <math.h>
 
 #define TASK_SWITCH 0
 

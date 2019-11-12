@@ -7,6 +7,7 @@
 #include <string>
 #include <sstream>
 #include <unistd.h>
+#include <math.h>
 
 using namespace std;
 
@@ -27,7 +28,7 @@ public:
     void push(const T &data);
     const void pop();
     void reverse_list();
-    constexpr void print_vertically() const;
+    inline void print_vertically() const;
     constexpr void print_horizontally() const;
     struct Node<T> *get_element(const uint_fast16_t &index) const;
     struct Node<T> *get_tail() const;
@@ -60,13 +61,20 @@ private:
 };
 
 template<typename T>
-constexpr void LinkedList<T>::print_vertically() const {
+void LinkedList<T>::print_vertically() const {
     cout << "Vertical view:";
     uint_fast16_t element_length = 0;
     struct Node<T> *current = head;
     while (current) {
         cout << '\n';
-        element_length = find_digits_length_stringify(current->data);
+        try {
+            if (floor(abs(current->data)) == current->data)  // There is a is_integral function that checks this as well.
+                element_length = find_digits_length(current->data);
+            else {
+                element_length = find_digits_length_stringify(current->data);
+                throw false; // Element not an integer.
+            }
+        } catch (bool thrown) {}
         print_width(element_length);
         cout << '\n';
         cout << "| " << current->data << " |";
@@ -287,8 +295,6 @@ void LinkedList<T>::activate_task() {
     LinkedList lls(nullptr, "Linked List (uint_fast16_t) Structure");
     ConsoleColoring::cyan(lls.get_linked_list_name());
     cout << '\n';
-    // This function won't work with a class template.
-    cout << "Result for find_digits_length(-13) is: " << lls.find_digits_length(-13) - 2 << endl;
     lls.push(14.202);
     lls.push(-43);
     lls.push(32767);

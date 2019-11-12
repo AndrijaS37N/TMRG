@@ -17,6 +17,8 @@ thread
 -
 unistd.h
 -
+math.h
+-
 
 /Users/andrijadjuric/CLionProjects/TMRG/practice/linked_list.h
 ../global/console_coloring.h
@@ -30,6 +32,8 @@ string
 sstream
 -
 unistd.h
+-
+math.h
 -
 
 /Users/andrijadjuric/CLionProjects/TMRG/practice/min_period.h
