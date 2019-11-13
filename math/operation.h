@@ -2,11 +2,6 @@
 #define TMRG_OPERATION_H
 
 #include "../global/console_coloring.h"
-#include <type_traits>
-#include <sstream>
-#include <string>
-#include <math.h>
-#include <utility>
 
 class Operation {
 public:
@@ -17,10 +12,10 @@ public:
 template<typename T>
 T Operation::abs(T &numeric_value) {
     try {
-        if (numeric_value != NULL)
+        if (is_arithmetic<T>::value)
             return (numeric_value < 0) ? -numeric_value : numeric_value;
         else
-            throw "Operation::abs reports that something went wrong.";
+            throw "Operation::abs reports that a non arithmetic value was passed.";
     } catch (const char *thrown) {
         ConsoleColoring::red(thrown);
         return 0;

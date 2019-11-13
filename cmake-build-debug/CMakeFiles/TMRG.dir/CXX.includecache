@@ -7,36 +7,28 @@
 #IncludeRegexTransform: 
 
 /Users/andrijadjuric/CLionProjects/TMRG/global/console_coloring.h
+iostream
+-
 
 /Users/andrijadjuric/CLionProjects/TMRG/main.cpp
 tasks/min_period.h
 /Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.h
 structures/linked_list.h
 /Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.h
-thread
--
 unistd.h
 -
-math/operation.h
-/Users/andrijadjuric/CLionProjects/TMRG/math/operation.h
+thread
+-
 
 /Users/andrijadjuric/CLionProjects/TMRG/math/operation.h
 ../global/console_coloring.h
 /Users/andrijadjuric/CLionProjects/TMRG/global/console_coloring.h
-type_traits
--
-sstream
--
-string
--
-math.h
--
-utility
--
 
 /Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.h
 ../global/console_coloring.h
 /Users/andrijadjuric/CLionProjects/TMRG/global/console_coloring.h
+../math/operation.h
+/Users/andrijadjuric/CLionProjects/TMRG/math/operation.h
 linked_list.h
 /Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.h
 iostream
@@ -47,8 +39,6 @@ sstream
 -
 math.h
 -
-../math/operation.h
-/Users/andrijadjuric/CLionProjects/TMRG/math/operation.h
 
 /Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.h
 iostream

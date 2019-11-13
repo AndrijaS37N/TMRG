@@ -2,12 +2,12 @@
 #define TMRG_LINKED_LIST_H
 
 #include "../global/console_coloring.h"
+#include "../math/operation.h"
 #include "linked_list.h"
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <math.h>
-#include "../math/operation.h"
 
 using namespace std;
 
@@ -28,12 +28,12 @@ public:
     void push(const T &data);
     const void pop();
     void reverse_list();
-    inline void print_vertically() const;
+    void print_vertically();
     constexpr void print_horizontally() const;
-    struct Node<T> *get_element(const uint_fast16_t &index) const;
+    struct Node<T> *get_element(const u_int64_t &index) const;
     struct Node<T> *get_tail() const;
-    void insert_at(struct Node<T> *insert_node, const uint_fast16_t &index);
-    void replace_with(struct Node<T> *replace_node, const uint_fast16_t &index);
+    void insert_at(struct Node<T> *insert_node, const u_int64_t &index);
+    void replace_with(struct Node<T> *replace_node, const u_int64_t &index);
     void search_elements(const T data);
     static void activate_task();
 
@@ -41,7 +41,7 @@ public:
         return linked_list_name;
     }
 
-    uint_fast16_t get_list_size() const {
+    u_int64_t get_list_size() const {
         return list_size;
     }
 
@@ -50,35 +50,25 @@ public:
     }
 
 private:
-    uint_fast16_t list_size;
+    u_int64_t list_size;
     struct Node<T> *head;
     const char *linked_list_name;
-    inline static uint_fast16_t find_digits_length(int_fast16_t integer);
-    inline static uint_fast16_t find_digits_length_stringify(const T &data);
-    constexpr static void print_width(const uint_fast16_t &data_length);
-    void print_search_result(uint_fast16_t *result_indices, const uint_fast16_t &indices_count);
+    static u_int64_t find_element_length(double data);
+    static u_int64_t stringify_double(double &data);
+    static u_int64_t find_element_length(const string &data);
+    constexpr static void print_width(const u_int64_t &data_length);
+    void print_search_result(u_int64_t *result_indices, const u_int64_t &indices_count);
     ~LinkedList();
 };
 
 template<typename T>
-void LinkedList<T>::print_vertically() const {
+void LinkedList<T>::print_vertically() {
     cout << "Vertical view:";
-    uint_fast16_t element_length = 0;
+    u_int64_t element_length = 0;
     struct Node<T> *current = head;
     while (current) {
         cout << '\n';
-        // try {
-        //     if (floor(abs(current->data)) == current->data)
-        //         element_length = find_digits_length(current->data);
-        //     else {
-        //         element_length = find_digits_length_stringify(current->data);
-        //         throw false; // Element not an integer.
-        //     }
-        // } catch (bool thrown) {}
-
-        /// FIX THIS.
-
-        // is_arithmetic<double>::value
+        element_length = find_element_length(current->data);
         print_width(element_length);
         cout << '\n';
         cout << "| " << current->data << " |";
@@ -105,14 +95,20 @@ constexpr void LinkedList<T>::print_horizontally() const {
 }
 
 template<typename T>
-inline uint_fast16_t LinkedList<T>::find_digits_length(int_fast16_t integer) {
-    int length = 0;
+u_int64_t LinkedList<T>::find_element_length(double number) {
+    auto alpha = floor(Operation::abs(number));
+    auto beta = Operation::abs(number);
+    if (alpha != beta || number > 37000000) // If this is a floating point number or a somewhat big number.
+        return stringify_double(number);
+    ConsoleColoring::yellow('I');
+    int64_t integer = (int64_t) number;
+    u_int64_t length;
     if (integer > 0) {
         for (length = 0; integer > 0; length++)
             integer = integer / 10;
         length += 2;
     } else {
-        integer = abs(integer);
+        integer = Operation::abs(integer);
         for (length = 0; integer > 0; length++)
             integer = integer / 10;
         length += 3;
@@ -121,14 +117,21 @@ inline uint_fast16_t LinkedList<T>::find_digits_length(int_fast16_t integer) {
 }
 
 template<typename T>
-inline uint_fast16_t LinkedList<T>::find_digits_length_stringify(const T &data) {
+u_int64_t LinkedList<T>::stringify_double(double &data) {
+    ConsoleColoring::yellow('D');
     ostringstream convert;
     convert << data;
     return convert.str().length() + 2;
 }
 
 template<typename T>
-constexpr void LinkedList<T>::print_width(const uint_fast16_t &data_length) {
+u_int64_t LinkedList<T>::find_element_length(const string &data) {
+    ConsoleColoring::yellow('S');
+    return data.length() + 2;
+}
+
+template<typename T>
+constexpr void LinkedList<T>::print_width(const u_int64_t &data_length) {
     cout << ' ';
     for (int i = 0; i < data_length; ++i)
         cout << '-';
@@ -174,9 +177,9 @@ void LinkedList<T>::reverse_list() {
 }
 
 template<typename T>
-struct Node<T> *LinkedList<T>::get_element(const uint_fast16_t &index) const {
+struct Node<T> *LinkedList<T>::get_element(const u_int64_t &index) const {
     struct Node<T> *current = head;
-    uint_fast16_t counter = 0;
+    u_int64_t counter = 0;
     while (current != nullptr) {
         if (counter == index)
             return current;
@@ -200,10 +203,10 @@ struct Node<T> *LinkedList<T>::get_tail() const {
 }
 
 template<typename T>
-void LinkedList<T>::insert_at(struct Node<T> *insert_node, const uint_fast16_t &index) {
+void LinkedList<T>::insert_at(struct Node<T> *insert_node, const u_int64_t &index) {
     struct Node<T> *current = head;
     struct Node<T> *previous = nullptr;
-    uint_fast16_t counter = 0;
+    u_int64_t counter = 0;
     while (current) {
         if (counter == index) {
             if (previous == nullptr) { // For the first one.
@@ -232,10 +235,10 @@ void LinkedList<T>::insert_at(struct Node<T> *insert_node, const uint_fast16_t &
 }
 
 template<typename T>
-void LinkedList<T>::replace_with(struct Node<T> *replace_node, const uint_fast16_t &index) {
+void LinkedList<T>::replace_with(struct Node<T> *replace_node, const u_int64_t &index) {
     struct Node<T> *current = head;
     struct Node<T> *previous = nullptr;
-    uint_fast16_t counter = 0;
+    u_int64_t counter = 0;
     while (current) {
         previous = current;
         current = current->next_node;
@@ -253,14 +256,14 @@ void LinkedList<T>::replace_with(struct Node<T> *replace_node, const uint_fast16
 template<typename T>
 void LinkedList<T>::search_elements(const T data) {
     ConsoleColoring::blue("Searching for the element.");
-    ConsoleColoring::yellow(to_string(data).c_str()); // Use the c_str function to convert a string to a char *array.
+    ConsoleColoring::yellow(data);
     struct Node<T> *current = head;
-    uint_fast16_t indices_count = 0;
-    uint_fast16_t counter = 0;
-    uint_fast16_t *result_indices = (uint_fast16_t *) malloc(sizeof(data));
+    u_int64_t indices_count = 0;
+    u_int64_t counter = 0;
+    u_int64_t *result_indices = (u_int64_t *) malloc(sizeof(data));
     while (current) {
         if (current->data == data) {
-            result_indices = (uint_fast16_t *) realloc(result_indices, sizeof(data) * indices_count);
+            result_indices = (u_int64_t *) realloc(result_indices, sizeof(data) * indices_count);
             result_indices[indices_count] = counter;
             indices_count++;
         }
@@ -272,7 +275,7 @@ void LinkedList<T>::search_elements(const T data) {
 }
 
 template<typename T>
-void LinkedList<T>::print_search_result(uint_fast16_t *result_indices, const uint_fast16_t &indices_count) {
+void LinkedList<T>::print_search_result(u_int64_t *result_indices, const u_int64_t &indices_count) {
     cout << "Search result indices: ";
     for (auto i = 0; i < indices_count; ++i)
         cout << result_indices[i] << ' ';
@@ -289,15 +292,17 @@ LinkedList<T>::~LinkedList() {
         current = current->next_node;
         delete previous;
     }
-    delete current; // This should at his point of execution be nullptr.
+    delete current; // This should at this point of execution be nullptr.
     ConsoleColoring::blue("Destructor finished deleting nodes.");
     cout << '\n';
 }
 
 template<typename T>
 void LinkedList<T>::activate_task() {
-    LinkedList lls(nullptr, "Linked List (uint_fast16_t) Structure");
+    LinkedList lls(nullptr, "Linked List Structure");
     ConsoleColoring::cyan(lls.get_linked_list_name());
+    cout << "Size: " << typeid(u_int64_t).name() << ' ' << "(u_int64_t)" << endl;
+    cout << "Of type: " << typeid(T).name() << endl;
     lls.push(14.202);
     lls.push(-43);
     lls.push(32767);
@@ -306,14 +311,19 @@ void LinkedList<T>::activate_task() {
     lls.push(-1.121);
     lls.push('s');
     lls.push(2);
-    // Example of a push in a LinkedList<string> would be lls.push("Hello!")
+    lls.push(numeric_limits<double>::min());
+    lls.push(numeric_limits<double>::max());
+
+    // For string types push inputs must be changed in the activate_task function. 👇
+    // LinkedList<string>::activate_task();
+
     cout << '\n';
     lls.print_vertically();
     cout << '\n';
     lls.print_horizontally();
     cout << "Size: " << lls.get_list_size() << endl;
 
-    const atomic_uint_fast16_t list_size_variable = lls.get_list_size();
+    const atomic_uint64_t list_size_variable = lls.get_list_size();
     for (int i = 0; i < list_size_variable + 4; ++i)
         lls.pop();
 
