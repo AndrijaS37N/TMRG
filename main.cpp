@@ -66,11 +66,6 @@ int main() {
 
     // TODO -> Sorting.
 
-    int a = 4;
-    declval(a) c;
-    declval();
-    cout << (typeid(c).name()) << endl;
-
     LinkedList<double>::activate_task();
 
     /// TODO -> Read more news about Concepts, a C++20 feature. Also, more on Modules, Ranges and Coroutine structures.
