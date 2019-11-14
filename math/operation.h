@@ -4,6 +4,8 @@
 #include "../global/console_coloring.h"
 #include <math.h>
 
+constexpr extern atomic_int64_t number_printing_edge = 1000000;
+
 class Operation { // TODO -> Make a custom floor functions.
 public:
     template<typename T>
@@ -27,7 +29,7 @@ T Operation::abs(const T &numeric_value) {
 
 template<typename T>
 bool Operation::check_integer(const T &numeric_value) {
-    if (numeric_value > 370000000)
+    if (numeric_value >= number_printing_edge)
         return false;
     auto alpha = floor(Operation::abs(numeric_value));
     auto beta = Operation::abs(numeric_value);

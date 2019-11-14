@@ -51,23 +51,23 @@ public:
         return head;
     }
 
-    constexpr const char* get_size_type() const {
+    constexpr const char *get_size_type() const {
         return size_type;
     }
 
-    constexpr const char* get_data_type() const {
+    constexpr const char *get_data_type() const {
         return data_type;
     }
+
 private:
     const char *data_type;
     const char *size_type;
     u_int64_t list_size;
     struct Node<T> *head;
     const char *linked_list_name;
-    static inline u_int64_t find_element_length(double data);
+    inline u_int64_t find_element_length(double data);
     static inline u_int64_t stringify_double(double &data);
     static constexpr u_int64_t find_element_length(const string &s); // Overloaded.
-    static constexpr u_int64_t find_element_length(const char &c); // Overloaded.
     static constexpr void print_width(const u_int64_t &data_length);
     constexpr void print_search_result(u_int64_t *result_indices, const u_int64_t &indices_count);
     ~LinkedList();
@@ -110,6 +110,8 @@ template<typename T>
 inline u_int64_t LinkedList<T>::find_element_length(double number) {
     if (!Operation::check_integer(number)) // If this is a floating point number or a somewhat big number.
         return stringify_double(number);
+    if (*data_type == 'c')
+        return 3;
     ConsoleColoring::yellow('I'); // Printing as.
     int64_t integer = (int64_t) number;
     u_int64_t length;
@@ -138,12 +140,6 @@ template<typename T>
 constexpr u_int64_t LinkedList<T>::find_element_length(const string &s) {
     ConsoleColoring::yellow('S'); // Printing as.
     return s.length() + 2;
-}
-
-template<typename T>
-constexpr u_int64_t LinkedList<T>::find_element_length(const char &c) {
-    ConsoleColoring::yellow('C'); // Printing as.
-    return 3;
 }
 
 template<typename T>
@@ -329,6 +325,7 @@ void LinkedList<T>::activate_task() {
     lls.push(2);
     lls.push(numeric_limits<double>::min());
     lls.push(numeric_limits<double>::max());
+    lls.push(number_printing_edge); // External value defined in math/operation.h file.
 
     // For string types push inputs must be changed in the activate_task function. 👇
     // LinkedList<string>::activate_task();
