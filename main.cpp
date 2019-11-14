@@ -48,25 +48,14 @@ int main() {
         cout << numeric_limits<uint_least64_t>::max() << endl;
         cout << numeric_limits<unsigned long long int>::max() << endl;
 
-        /*
-         * Minimal period in a integer array task.
-        */
-
         cout << endl;
         MinPeriod::activate_task();
 
-        /*
-         * Linked list custom structure made.
-        */
-
-        /// 👨‍🚀
+        LinkedList<double> lls(nullptr, "Linked List Structure");
+        lls.activate_task();
     }
 
     cout << endl;
-
-    // TODO -> Sorting.
-
-    LinkedList<double>::activate_task();
 
     /// TODO -> Read more news about Concepts, a C++20 feature. Also, more on Modules, Ranges and Coroutine structures.
 

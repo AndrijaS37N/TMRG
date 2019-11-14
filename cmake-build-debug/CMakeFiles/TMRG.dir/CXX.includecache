@@ -35,11 +35,9 @@ linked_list.h
 /Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.h
 iostream
 -
-string
--
 sstream
 -
-math.h
+string
 -
 
 /Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.h

@@ -5,9 +5,8 @@
 #include "../math/operation.h"
 #include "linked_list.h"
 #include <iostream>
-#include <string>
 #include <sstream>
-#include <math.h>
+#include <string>
 
 using namespace std;
 
@@ -27,6 +26,7 @@ public:
         data_type = typeid(T).name();
     }
 
+    ~LinkedList();
     void push(const T &data);
     const void pop();
     void reverse_list();
@@ -37,7 +37,8 @@ public:
     void insert_at(struct Node<T> *insert_node, const u_int64_t &index);
     void replace_with(struct Node<T> *replace_node, const u_int64_t &index);
     void search_elements(const T data);
-    static void activate_task();
+    void merge_sort(struct Node<T> **head_references);
+    void activate_task();
 
     constexpr const char *get_linked_list_name() const {
         return linked_list_name;
@@ -70,7 +71,8 @@ private:
     static constexpr u_int64_t find_element_length(const string &s); // Overloaded.
     static constexpr void print_width(const u_int64_t &data_length);
     constexpr void print_search_result(u_int64_t *result_indices, const u_int64_t &indices_count);
-    ~LinkedList();
+    struct Node<T> *merge_sorted(struct Node<T> *alpha, struct Node<T> *beta);
+    void split(struct Node<T> *source, struct Node<T> **front_reference, struct Node<T> **back_reference);
 };
 
 template<typename T>
@@ -151,14 +153,17 @@ constexpr void LinkedList<T>::print_width(const u_int64_t &data_length) {
 
 template<typename T>
 void LinkedList<T>::push(const T &data) {
-    struct Node<T> *new_node = new Node<T>;
-    if (new_node == nullptr) // Always false?
-        ConsoleColoring::red("Memory allocation failed.");
-    else {
+    struct Node<T> *new_node;
+    try {
+        new_node = new Node<T>;
+        if (new_node == nullptr) // Memory allocation issues?
+            throw;
         new_node->data = data;
         new_node->next_node = head;
         head = new_node;
         list_size++;
+    } catch (...) {
+        ConsoleColoring::red("Memory allocation failed? New node not pushed into the list.");
     }
 }
 
@@ -225,11 +230,13 @@ void LinkedList<T>::insert_at(struct Node<T> *insert_node, const u_int64_t &inde
                 head = insert_node;
                 insert_node->next_node = current;
                 ConsoleColoring::blue("New element inserted.");
+                list_size++;
                 return;
             } else { // For the ones in the middle.
                 previous->next_node = insert_node;
                 insert_node->next_node = current;
                 ConsoleColoring::blue("New element inserted.");
+                list_size++;
                 return;
             }
         }
@@ -240,6 +247,7 @@ void LinkedList<T>::insert_at(struct Node<T> *insert_node, const u_int64_t &inde
             previous->next_node = insert_node;
             insert_node->next_node = current;
             ConsoleColoring::blue("New element inserted.");
+            list_size++;
             return;
         }
     }
@@ -296,6 +304,62 @@ constexpr void LinkedList<T>::print_search_result(u_int64_t *result_indices, con
 }
 
 template<typename T>
+struct Node<T> *LinkedList<T>::merge_sorted(Node<T> *alpha, Node<T> *beta) {
+    struct Node<T> *result = nullptr;
+    // Base cases.
+    if (alpha == nullptr)
+        return (beta);
+    else if (beta == nullptr)
+        return (alpha);
+    // Pick either a or b, and recur.
+    if (alpha->data <= beta->data) {
+        result = alpha;
+        result->next_node = merge_sorted(alpha->next_node, beta);
+    } else {
+        result = beta;
+        result->next_node = merge_sorted(alpha, beta->next_node);
+    }
+    return result;
+}
+
+template<typename T>
+void LinkedList<T>::split(Node<T> *source, Node<T> **front_reference, Node<T> **back_reference) {
+    struct Node<T> *fast;
+    struct Node<T> *slow;
+    slow = source;
+    fast = source->next_node;
+    // Advance 'fast' two nodes, and advance 'slow' one node.
+    while (fast != nullptr) {
+        fast = fast->next_node;
+        if (fast != nullptr) {
+            slow = slow->next_node;
+            fast = fast->next_node;
+        }
+    }
+    // The 'slow' is before the midpoint in the list, so split it in two at that point.
+    *front_reference = source;
+    *back_reference = slow->next_node;
+    slow->next_node = nullptr;
+}
+
+template<typename T>
+void LinkedList<T>::merge_sort(struct Node<T> **head_reference) {
+    struct Node<T> *head_tmp = *head_reference;
+    struct Node<T> *alpha;
+    struct Node<T> *beta;
+    // Base case - length 0 or 1.
+    if ((head_tmp == nullptr) || (head_tmp->next_node == nullptr))
+        return;
+    // Split head into 'alpha' and 'beta' sub lists.
+    split(head_tmp, &alpha, &beta);
+    /* Recursively sort the sub-lists. */
+    merge_sort(&alpha);
+    merge_sort(&beta);
+    // Merge the two sorted lists together.
+    *head_reference = merge_sorted(alpha, beta);
+}
+
+template<typename T>
 LinkedList<T>::~LinkedList() {
     struct Node<T> *current = head;
     struct Node<T> *previous = nullptr;
@@ -311,78 +375,88 @@ LinkedList<T>::~LinkedList() {
 
 template<typename T>
 void LinkedList<T>::activate_task() {
-    LinkedList lls(nullptr, "Linked List Structure");
-    ConsoleColoring::cyan(lls.get_linked_list_name());
-    cout << "Size: " << lls.get_size_type() << ' ' << "(u_int64_t)" << endl;
-    cout << "Of type: " << lls.get_data_type() << endl;
-    lls.push(14.202);
-    lls.push(-43);
-    lls.push(32767);
-    lls.push('a');
-    lls.push(000);
-    lls.push(-1.121);
-    lls.push('s');
-    lls.push(2);
-    lls.push(numeric_limits<double>::min());
-    lls.push(numeric_limits<double>::max());
-    lls.push(number_printing_edge); // External value defined in math/operation.h file.
+    ConsoleColoring::cyan(get_linked_list_name());
+    cout << "Size: " << get_size_type() << ' ' << "(u_int64_t)" << endl;
+    cout << "Of type: " << get_data_type() << endl;
+    push(14.202);
+    push(-43);
+    push(32767);
+    push('a');
+    push(000);
+    push(-1.121);
+    push('s');
+    push(2);
+    push(numeric_limits<double>::min());
+    push(numeric_limits<double>::max());
+    push(number_printing_edge); // External value defined in math/operation.h file.
 
     // For string types push inputs must be changed in the activate_task function. 👇
     // LinkedList<string>::activate_task();
 
     cout << '\n';
-    lls.print_vertically();
+    print_vertically();
     cout << '\n';
-    lls.print_horizontally();
-    cout << "Size: " << lls.get_list_size() << endl;
+    print_horizontally();
+    cout << "Size: " << get_list_size() << endl;
 
-    const atomic_uint64_t list_size_variable = lls.get_list_size();
+    const atomic_uint64_t list_size_variable = get_list_size();
     for (int i = 0; i < list_size_variable + 4; ++i)
-        lls.pop();
+        pop();
 
-    lls.print_horizontally();
-    lls.print_vertically();
-    cout << "Size: " << lls.get_list_size() << endl;
+    print_horizontally();
+    print_vertically();
+    cout << "Size: " << get_list_size() << endl;
     cout << '\n';
     cout << "Added 4 new elements." << endl;
 
     for (short j = 1; j <= 4; ++j)
-        lls.push(j);
+        push(j);
 
-    cout << "Head: " << lls.get_head()->data << endl;
-    lls.print_horizontally();
-    lls.reverse_list();
-    lls.print_horizontally();
-    cout << "Element at index 2: " << lls.get_element(2)->data << endl;
-    cout << "Tail: " << lls.get_tail()->data << endl;
+    cout << "Head: " << get_head()->data << endl;
+    print_horizontally();
+    reverse_list();
+    print_horizontally();
+    cout << "Element at index 2: " << get_element(2)->data << endl;
+    cout << "Tail: " << get_tail()->data << endl;
 
     // Failures.
     struct Node<T> *insert_node = new Node<T>;
     insert_node->data = 100;
-    lls.insert_at(insert_node, lls.get_list_size() + 6);
-    lls.print_horizontally();
+    insert_at(insert_node, get_list_size() + 6);
+    print_horizontally();
 
     struct Node<T> *replace_node = new Node<T>;
     replace_node->data = -50;
-    lls.replace_with(replace_node, 22);
-    lls.print_horizontally();
+    replace_with(replace_node, 22);
+    print_horizontally();
 
     // Successes.
     insert_node->data = 100;
-    lls.insert_at(insert_node, lls.get_list_size()); // Insert at the end. Queue in.
-    lls.print_horizontally();
+    insert_at(insert_node, get_list_size()); // Insert at the end. Queue in.
+    print_horizontally();
 
     replace_node->data = -50;
-    lls.replace_with(replace_node, lls.get_list_size()); // Replace the last element.
-    lls.print_horizontally();
+    replace_with(replace_node, get_list_size() - 1); // Replace the last element.
+    print_horizontally();
 
     // Search element 2 and find the indices of element 2 in the list.
     for (short j = 1; j <= 3; ++j)
-        lls.push(2);
+        push(2);
 
-    lls.print_horizontally();
-    lls.search_elements(2);
-    lls.search_elements(-50);
+    cout << "Size: " << get_list_size() << endl;
+
+    print_horizontally();
+    search_elements(2);
+    search_elements(-50);
+
+    cout << '\n';
+
+    push(111);
+    print_horizontally();
+    ConsoleColoring::blue("Merge sort started.");
+    merge_sort(&head);
+    print_horizontally();
+    cout << "Size: " << get_list_size() << endl;
 
     cout << '\n';
 }
