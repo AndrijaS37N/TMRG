@@ -23,46 +23,58 @@ public:
     explicit LinkedList(struct Node<T> *head, const char *linked_list_name) : head(head),
                                                                               linked_list_name(linked_list_name) {
         list_size = 0;
+        size_type = typeid(u_int64_t).name();
+        data_type = typeid(T).name();
     }
 
     void push(const T &data);
     const void pop();
     void reverse_list();
-    void print_vertically();
+    constexpr void print_vertically();
     constexpr void print_horizontally() const;
-    struct Node<T> *get_element(const u_int64_t &index) const;
-    struct Node<T> *get_tail() const;
+    constexpr struct Node<T> *get_element(const u_int64_t &index) const;
+    constexpr struct Node<T> *get_tail() const;
     void insert_at(struct Node<T> *insert_node, const u_int64_t &index);
     void replace_with(struct Node<T> *replace_node, const u_int64_t &index);
     void search_elements(const T data);
     static void activate_task();
 
-    const char *get_linked_list_name() const {
+    constexpr const char *get_linked_list_name() const {
         return linked_list_name;
     }
 
-    u_int64_t get_list_size() const {
+    constexpr u_int64_t get_list_size() const {
         return list_size;
     }
 
-    struct Node<T> *get_head() const {
+    constexpr struct Node<T> *get_head() const {
         return head;
     }
 
+    constexpr const char* get_size_type() const {
+        return size_type;
+    }
+
+    constexpr const char* get_data_type() const {
+        return data_type;
+    }
 private:
+    const char *data_type;
+    const char *size_type;
     u_int64_t list_size;
     struct Node<T> *head;
     const char *linked_list_name;
-    static u_int64_t find_element_length(double data);
-    static u_int64_t stringify_double(double &data);
-    static u_int64_t find_element_length(const string &data);
-    constexpr static void print_width(const u_int64_t &data_length);
-    void print_search_result(u_int64_t *result_indices, const u_int64_t &indices_count);
+    static inline u_int64_t find_element_length(double data);
+    static inline u_int64_t stringify_double(double &data);
+    static constexpr u_int64_t find_element_length(const string &s);
+    static constexpr u_int64_t find_element_length(const char &c);
+    static constexpr void print_width(const u_int64_t &data_length);
+    constexpr void print_search_result(u_int64_t *result_indices, const u_int64_t &indices_count);
     ~LinkedList();
 };
 
 template<typename T>
-void LinkedList<T>::print_vertically() {
+constexpr void LinkedList<T>::print_vertically() {
     cout << "Vertical view:";
     u_int64_t element_length = 0;
     struct Node<T> *current = head;
@@ -95,12 +107,10 @@ constexpr void LinkedList<T>::print_horizontally() const {
 }
 
 template<typename T>
-u_int64_t LinkedList<T>::find_element_length(double number) {
-    auto alpha = floor(Operation::abs(number));
-    auto beta = Operation::abs(number);
-    if (alpha != beta || number > 37000000) // If this is a floating point number or a somewhat big number.
+inline u_int64_t LinkedList<T>::find_element_length(double number) {
+    if (!Operation::check_integer(number)) // If this is a floating point number or a somewhat big number.
         return stringify_double(number);
-    ConsoleColoring::yellow('I');
+    ConsoleColoring::yellow('I'); // Printing as.
     int64_t integer = (int64_t) number;
     u_int64_t length;
     if (integer > 0) {
@@ -117,17 +127,23 @@ u_int64_t LinkedList<T>::find_element_length(double number) {
 }
 
 template<typename T>
-u_int64_t LinkedList<T>::stringify_double(double &data) {
-    ConsoleColoring::yellow('D');
+inline u_int64_t LinkedList<T>::stringify_double(double &data) {
+    ConsoleColoring::yellow('D'); // Printing as.
     ostringstream convert;
     convert << data;
     return convert.str().length() + 2;
 }
 
 template<typename T>
-u_int64_t LinkedList<T>::find_element_length(const string &data) {
-    ConsoleColoring::yellow('S');
-    return data.length() + 2;
+constexpr u_int64_t LinkedList<T>::find_element_length(const string &s) {
+    ConsoleColoring::yellow('S'); // Printing as.
+    return s.length() + 2;
+}
+
+template<typename T>
+constexpr u_int64_t LinkedList<T>::find_element_length(const char &c) {
+    ConsoleColoring::yellow('C'); // Printing as.
+    return 3;
 }
 
 template<typename T>
@@ -177,7 +193,7 @@ void LinkedList<T>::reverse_list() {
 }
 
 template<typename T>
-struct Node<T> *LinkedList<T>::get_element(const u_int64_t &index) const {
+constexpr struct Node<T> *LinkedList<T>::get_element(const u_int64_t &index) const {
     struct Node<T> *current = head;
     u_int64_t counter = 0;
     while (current != nullptr) {
@@ -191,7 +207,7 @@ struct Node<T> *LinkedList<T>::get_element(const u_int64_t &index) const {
 }
 
 template<typename T>
-struct Node<T> *LinkedList<T>::get_tail() const {
+constexpr struct Node<T> *LinkedList<T>::get_tail() const {
     struct Node<T> *current = head;
     while (current) {
         current = current->next_node;
@@ -275,7 +291,7 @@ void LinkedList<T>::search_elements(const T data) {
 }
 
 template<typename T>
-void LinkedList<T>::print_search_result(u_int64_t *result_indices, const u_int64_t &indices_count) {
+constexpr void LinkedList<T>::print_search_result(u_int64_t *result_indices, const u_int64_t &indices_count) {
     cout << "Search result indices: ";
     for (auto i = 0; i < indices_count; ++i)
         cout << result_indices[i] << ' ';
@@ -301,8 +317,8 @@ template<typename T>
 void LinkedList<T>::activate_task() {
     LinkedList lls(nullptr, "Linked List Structure");
     ConsoleColoring::cyan(lls.get_linked_list_name());
-    cout << "Size: " << typeid(u_int64_t).name() << ' ' << "(u_int64_t)" << endl;
-    cout << "Of type: " << typeid(T).name() << endl;
+    cout << "Size: " << lls.get_size_type() << ' ' << "(u_int64_t)" << endl;
+    cout << "Of type: " << lls.get_data_type() << endl;
     lls.push(14.202);
     lls.push(-43);
     lls.push(32767);

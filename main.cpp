@@ -43,6 +43,11 @@ int main() {
         angles.join();
         usleep(1000 * 1000);
 
+        // These are all the same max size.
+        cout << numeric_limits<u_int64_t>::max() << endl;
+        cout << numeric_limits<uint_least64_t>::max() << endl;
+        cout << numeric_limits<unsigned long long int>::max() << endl;
+
         /*
          * Minimal period in a integer array task.
         */
@@ -59,11 +64,11 @@ int main() {
 
     cout << endl;
 
-    // TODO -> Sortable functions.
+    // TODO -> Sorting.
 
-    LinkedList<double>::activate_task();
+    LinkedList<char>::activate_task();
 
-    /// TODO -> Learn more about Concepts, a C++20 feature. Also, more on Modules, Ranges and Coroutine structures.
+    /// TODO -> Read more news about Concepts, a C++20 feature. Also, more on Modules, Ranges and Coroutine structures.
 
     return 0;
 }
