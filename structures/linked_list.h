@@ -66,8 +66,8 @@ private:
     const char *linked_list_name;
     static inline u_int64_t find_element_length(double data);
     static inline u_int64_t stringify_double(double &data);
-    static constexpr u_int64_t find_element_length(const string &s);
-    static constexpr u_int64_t find_element_length(const char &c);
+    static constexpr u_int64_t find_element_length(const string &s); // Overloaded.
+    static constexpr u_int64_t find_element_length(const char &c); // Overloaded.
     static constexpr void print_width(const u_int64_t &data_length);
     constexpr void print_search_result(u_int64_t *result_indices, const u_int64_t &indices_count);
     ~LinkedList();
