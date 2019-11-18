@@ -306,12 +306,10 @@ constexpr void LinkedList<T>::print_search_result(u_int64_t *result_indices, con
 template<typename T>
 struct Node<T> *LinkedList<T>::merge_sorted(Node<T> *alpha, Node<T> *beta) {
     struct Node<T> *result = nullptr;
-    // Base cases.
     if (alpha == nullptr)
         return (beta);
     else if (beta == nullptr)
         return (alpha);
-    // Pick either a or b, and recur.
     if (alpha->data <= beta->data) {
         result = alpha;
         result->next_node = merge_sorted(alpha->next_node, beta);
@@ -323,12 +321,12 @@ struct Node<T> *LinkedList<T>::merge_sorted(Node<T> *alpha, Node<T> *beta) {
 }
 
 template<typename T>
-void LinkedList<T>::split(Node<T> *source, Node<T> **front_reference, Node<T> **back_reference) {
+void LinkedList<T>::split(Node<T> *head_sub, Node<T> **low_index, Node<T> **high_index) {
     struct Node<T> *fast;
     struct Node<T> *slow;
-    slow = source;
-    fast = source->next_node;
-    // Advance 'fast' two nodes, and advance 'slow' one node.
+    slow = head_sub;
+    fast = head_sub->next_node;
+    // Jump two times for the fast one, and one time for the slow one.
     while (fast != nullptr) {
         fast = fast->next_node;
         if (fast != nullptr) {
@@ -336,26 +334,24 @@ void LinkedList<T>::split(Node<T> *source, Node<T> **front_reference, Node<T> **
             fast = fast->next_node;
         }
     }
-    // The 'slow' is before the midpoint in the list, so split it in two at that point.
-    *front_reference = source;
-    *back_reference = slow->next_node;
+    // The slow is before the midpoint in the list, so split it in two at that point.
+    *low_index = head_sub;
+    *high_index = slow->next_node;
     slow->next_node = nullptr;
 }
 
 template<typename T>
-void LinkedList<T>::merge_sort(struct Node<T> **head_reference) {
+void LinkedList<T>::merge_sort(struct Node<T> **head_reference) { // 111
     struct Node<T> *head_tmp = *head_reference;
     struct Node<T> *alpha;
     struct Node<T> *beta;
-    // Base case - length 0 or 1.
     if ((head_tmp == nullptr) || (head_tmp->next_node == nullptr))
         return;
-    // Split head into 'alpha' and 'beta' sub lists.
     split(head_tmp, &alpha, &beta);
-    /* Recursively sort the sub-lists. */
+    // Recursive sort of the two branches.
     merge_sort(&alpha);
     merge_sort(&beta);
-    // Merge the two sorted lists together.
+    // Merge the two sorted branches (lists) together.
     *head_reference = merge_sorted(alpha, beta);
 }
 

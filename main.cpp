@@ -55,6 +55,8 @@ int main() {
         lls.activate_task();
     }
 
+    LinkedList<double> lls(nullptr, "Linked List Structure");
+    lls.activate_task();
     cout << endl;
 
     /// TODO -> Read more news about Concepts, a C++20 feature. Also, more on Modules, Ranges and Coroutine structures.
