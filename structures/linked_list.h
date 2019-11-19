@@ -323,36 +323,36 @@ struct Node<T> *LinkedList<T>::merge_sorted(Node<T> *alpha, Node<T> *beta) {
 }
 
 template<typename T>
-void LinkedList<T>::split(Node<T> *head_sub, Node<T> **low_index, Node<T> **high_index) { /// (111, nullptr, nullptr)
+void LinkedList<T>::split(Node<T> *head_sub, Node<T> **low_index, Node<T> **high_index) { /// (4, nullptr, nullptr)
     struct Node<T> *fast;
     struct Node<T> *slow;
-    slow = head_sub; /// 111
-    fast = head_sub->next_node; /// 2
+    slow = head_sub; /// 4
+    fast = head_sub->next_node; /// 3
     // Jump two times for the fast one, and one time for the slow one.
     while (fast != nullptr) {
-        fast = fast->next_node; ///
+        fast = fast->next_node; /// 3 = 2
         if (fast != nullptr) {
-            slow = slow->next_node;
-            fast = fast->next_node;
+            slow = slow->next_node; /// 4 = 3
+            fast = fast->next_node; /// 2 = 1
         }
     }
     // The slow is before the midpoint in the list, so split it in two at that point.
-    *low_index = head_sub;
-    *high_index = slow->next_node;
+    *low_index = head_sub; /// nullptr = 4 (alpha)
+    *high_index = slow->next_node; /// nullptr = 2 (beta)
     slow->next_node = nullptr;
 }
 
 template<typename T>
-void LinkedList<T>::merge_sort(struct Node<T> **head_reference) {
-    struct Node<T> *head_tmp = *head_reference;
+void LinkedList<T>::merge_sort(struct Node<T> **head_reference) { /// head_reference = 4
+    struct Node<T> *head_tmp = *head_reference; ///
     struct Node<T> *alpha;
     struct Node<T> *beta;
     if ((head_tmp == nullptr) || (head_tmp->next_node == nullptr))
         return;
-    split(head_tmp, &alpha, &beta); /// (111, nullptr, nullptr) ->
+    split(head_tmp, &alpha, &beta); /// (1, nullptr, nullptr) ->
     // Recursive sort of the two branches.
-    merge_sort(&alpha); /// nullptr
-    merge_sort(&beta); /// nullptr
+    merge_sort(&alpha); /// nullptr, after split alpha = 4, after split beta = 2
+    merge_sort(&beta); /// TODO -> LIP
     // Merge the two sorted branches (lists) together.
     *head_reference = merge_sorted(alpha, beta);
 }
@@ -478,10 +478,13 @@ void LinkedList<T>::activate_task() {
 
     cout << '\n';
 
-    push(4);
-    push(3);
-    push(2);
     push(1);
+    push(2);
+    push(3);
+    push(4);
+    print_horizontally();
+    ConsoleColoring::blue("Merge sort started.");
+    merge_sort(&head);
     print_horizontally();
 
     cout << '\n';
