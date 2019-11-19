@@ -14,9 +14,6 @@
     <list default="true" id="89e37a87-7c53-4721-9364-637040c7724c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/TMRG" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TMRG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/operation.h" beforeDir="false" afterPath="$PROJECT_DIR$/math/operation.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structures/linked_list.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/structures/linked_list.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structures/linked_list.h" beforeDir="false" afterPath="$PROJECT_DIR$/structures/linked_list.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -111,7 +108,7 @@
       <workItem from="1573762763364" duration="1977000" />
       <workItem from="1573766959336" duration="29000" />
       <workItem from="1574097843877" duration="3519000" />
-      <workItem from="1574153958041" duration="2207000" />
+      <workItem from="1574153958041" duration="3445000" />
     </task>
     <servers />
   </component>

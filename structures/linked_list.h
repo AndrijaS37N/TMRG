@@ -183,13 +183,13 @@ void LinkedList<T>::reverse_list() {
     ConsoleColoring::blue("Reversing the list."); // Let's write down the example. The list is 4, 3, 2, 1.
     struct Node<T> *previous, *current, *next;
     previous = nullptr;
-    current = head; // The head is 4.
-    while (current != nullptr) { // The key here is to make a swap.
-        next = current->next_node;                                          // | next = 3      | next = 2      | next = 1      | next = nullptr
-        current->next_node = previous;                                      // | 3 = 4         | 2 = 3         | 1 = 3         | nullptr = 2
-        previous = current; // This one is useful for the last iteration.   // | previous = 4  | previous = 3  | previous = 2  | previous = 1
-        current = next; // Until current is nullptr.                        // | 4 = 3         | 3 = 2         | 2 = 1         | 1 = nullptr     -> This will be the breaking condition.
-    }
+    current = head; // The head is 4.                                       // Notes:
+    while (current != nullptr) { // The key here is to make a swap.         //  ----------------------------------------------------------------
+        next = current->next_node;                                          // | next = 3      | next = 2      | next = 1      | next = nullptr |
+        current->next_node = previous;                                      // | 3 = 4         | 2 = 3         | 1 = 3         | nullptr = 2    |
+        previous = current; // This one is useful for the last iteration.   // | previous = 4  | previous = 3  | previous = 2  | previous = 1   |
+        current = next; // Until current is nullptr.                        // | 4 = 3         | 3 = 2         | 2 = 1         | 1 = nullptr    | -> This will be the breaking condition.
+    }                                                                       //  ----------------------------------------------------------------
     head = previous; // Here is where to use that previous buffer Node.
 }
 
@@ -341,7 +341,7 @@ void LinkedList<T>::split(Node<T> *head_sub, Node<T> **low_index, Node<T> **high
 }
 
 template<typename T>
-void LinkedList<T>::merge_sort(struct Node<T> **head_reference) { // 111
+void LinkedList<T>::merge_sort(struct Node<T> **head_reference) {
     struct Node<T> *head_tmp = *head_reference;
     struct Node<T> *alpha;
     struct Node<T> *beta;
