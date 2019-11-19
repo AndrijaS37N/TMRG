@@ -384,6 +384,7 @@ void LinkedList<T>::activate_task() {
     push(2);
     push(numeric_limits<double>::min());
     push(numeric_limits<double>::max());
+    extern const atomic_int64_t number_printing_edge; // 👈 This. Explanation: https://stackoverflow.com/questions/10422034/when-to-use-extern-in-c.
     push(number_printing_edge); // External value defined in math/operation.h file.
 
     // For string types push inputs must be changed in the activate_task function. 👇

@@ -51,8 +51,9 @@ int main() {
         cout << endl;
         MinPeriod::activate_task();
 
-        LinkedList<double> lls(nullptr, "Linked List Structure");
-        lls.activate_task();
+        /*
+         * Local, global, static variables short notes: http://faculty.cs.niu.edu/~freedman/241/241notes/241var2.htm.
+         */
     }
 
     LinkedList<double> lls(nullptr, "Linked List Structure");
