@@ -183,7 +183,7 @@ void LinkedList<T>::reverse_list() {
     ConsoleColoring::blue("Reversing the list."); // Let's write down the example. The list is 4, 3, 2, 1.
     struct Node<T> *previous, *current, *next;
     previous = nullptr;
-    current = head; // The head is 4.                                       // Notes:
+    current = head; // The head is 4.                                       // Sketch for the example:
     while (current != nullptr) { // The key here is to make a swap.         //  ----------------------------------------------------------------
         next = current->next_node;                                          // | next = 3      | next = 2      | next = 1      | next = nullptr |
         current->next_node = previous;                                      // | 3 = 4         | 2 = 3         | 1 = 3         | nullptr = 2    |
