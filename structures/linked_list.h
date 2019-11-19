@@ -38,6 +38,8 @@ public:
     void replace_with(struct Node<T> *replace_node, const u_int64_t &index);
     void search_elements(const T data);
     void merge_sort(struct Node<T> **head_references);
+    void clear_list();
+    bool is_empty();
     void activate_task();
 
     constexpr const char *get_linked_list_name() const {
@@ -183,7 +185,7 @@ void LinkedList<T>::reverse_list() {
     ConsoleColoring::blue("Reversing the list."); // Let's write down the example. The list is 4, 3, 2, 1.
     struct Node<T> *previous, *current, *next;
     previous = nullptr;
-    current = head; // The head is 4.                                       // Sketch for the example:
+    current = head; // The head is 4.                                       Sketch for the example:
     while (current != nullptr) { // The key here is to make a swap.         //  ----------------------------------------------------------------
         next = current->next_node;                                          // | next = 3      | next = 2      | next = 1      | next = nullptr |
         current->next_node = previous;                                      // | 3 = 4         | 2 = 3         | 1 = 3         | nullptr = 2    |
@@ -321,14 +323,14 @@ struct Node<T> *LinkedList<T>::merge_sorted(Node<T> *alpha, Node<T> *beta) {
 }
 
 template<typename T>
-void LinkedList<T>::split(Node<T> *head_sub, Node<T> **low_index, Node<T> **high_index) {
+void LinkedList<T>::split(Node<T> *head_sub, Node<T> **low_index, Node<T> **high_index) { /// (111, nullptr, nullptr)
     struct Node<T> *fast;
     struct Node<T> *slow;
-    slow = head_sub;
-    fast = head_sub->next_node;
+    slow = head_sub; /// 111
+    fast = head_sub->next_node; /// 2
     // Jump two times for the fast one, and one time for the slow one.
     while (fast != nullptr) {
-        fast = fast->next_node;
+        fast = fast->next_node; ///
         if (fast != nullptr) {
             slow = slow->next_node;
             fast = fast->next_node;
@@ -347,12 +349,25 @@ void LinkedList<T>::merge_sort(struct Node<T> **head_reference) {
     struct Node<T> *beta;
     if ((head_tmp == nullptr) || (head_tmp->next_node == nullptr))
         return;
-    split(head_tmp, &alpha, &beta);
+    split(head_tmp, &alpha, &beta); /// (111, nullptr, nullptr) ->
     // Recursive sort of the two branches.
-    merge_sort(&alpha);
-    merge_sort(&beta);
+    merge_sort(&alpha); /// nullptr
+    merge_sort(&beta); /// nullptr
     // Merge the two sorted branches (lists) together.
     *head_reference = merge_sorted(alpha, beta);
+}
+
+template<typename T>
+void LinkedList<T>::clear_list() {
+    ConsoleColoring::yellow("Clearing the list.");
+    const atomic_uint64_t list_size_variable = list_size; // No need to use the getter here.
+    for (int i = 0; i < list_size_variable; ++i)
+        pop();
+}
+
+template<typename T>
+bool LinkedList<T>::is_empty() {
+    return list_size == 0 && head == nullptr;
 }
 
 template<typename T>
@@ -454,6 +469,20 @@ void LinkedList<T>::activate_task() {
     merge_sort(&head);
     print_horizontally();
     cout << "Size: " << get_list_size() << endl;
+
+    cout << '\n';
+
+    clear_list();
+    print_horizontally();
+    cout << "Is the list empty: " << is_empty() << endl;
+
+    cout << '\n';
+
+    push(4);
+    push(3);
+    push(2);
+    push(1);
+    print_horizontally();
 
     cout << '\n';
 }
