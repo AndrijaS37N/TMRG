@@ -1,4 +1,5 @@
 #include "tasks/min_period.h"
+#include "tasks/min_period_alt.h"
 #include "structures/linked_list.h"
 #include <unistd.h>
 #include <thread>
@@ -54,13 +55,15 @@ int main() {
         /*
          * Local, global, static variables short notes: http://faculty.cs.niu.edu/~freedman/241/241notes/241var2.htm.
          */
+
+        LinkedList<double> lls(nullptr, "Linked List Structure");
+        lls.activate_task();
+        cout << endl;
     }
 
-    LinkedList<double> lls(nullptr, "Linked List Structure");
-    lls.activate_task();
-    cout << endl;
+    MinPeriodAlt::activate_task();
 
-    /// TODO -> Read more news about Concepts, a C++20 feature. Also, more on Modules, Ranges and Coroutine structures.
+    // TODO -> Read more news about Concepts, a C++20 feature. Also, more on Modules, Ranges and Coroutine structures.
 
     return 0;
 }

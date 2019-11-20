@@ -4,6 +4,8 @@
 #include "../global/console_coloring.h"
 #include <math.h>
 
+using namespace std;
+
 const atomic_int64_t number_printing_edge = 1000000;
 
 class Operation { // TODO -> Make a custom floor functions.
