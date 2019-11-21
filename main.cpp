@@ -61,7 +61,8 @@ int main() {
         cout << endl;
     }
 
-    MinPeriodAlt::activate_task();
+    MinPeriodAlt min_period_alt_task;
+    min_period_alt_task.activate_task();
 
     // TODO -> Read more news about Concepts, a C++20 feature. Also, more on Modules, Ranges and Coroutine structures.
 
