@@ -11,7 +11,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89e37a87-7c53-4721-9364-637040c7724c" name="Default Changelist" comment="" />
+    <list default="true" id="89e37a87-7c53-4721-9364-637040c7724c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/TMRG" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TMRG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/min_period_alt.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/min_period_alt.cpp" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +113,8 @@
       <workItem from="1574179675215" duration="1465000" />
       <workItem from="1574238024941" duration="6503000" />
       <workItem from="1574279316042" duration="5713000" />
-      <workItem from="1574343945886" duration="8856000" />
+      <workItem from="1574343945886" duration="8893000" />
+      <workItem from="1574410097052" duration="1435000" />
     </task>
     <servers />
   </component>

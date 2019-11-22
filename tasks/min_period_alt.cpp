@@ -30,9 +30,10 @@ int MinPeriodAlt::min_period_alt(const int *array, const int &size,
         if (jump_index == size)
             break;
         while (jump_index < size) {
-            if (current->data != (lls.get_element(jump_index))->data)
+            if (current->data != (lls.get_element(jump_index))->data) {
+                period_completed = false;
                 break;
-            else
+            } else
                 period_completed = true;
             current = current->next_node;
             jump_index++;
@@ -48,7 +49,8 @@ int MinPeriodAlt::min_period_alt(const int *array, const int &size,
 }
 
 void MinPeriodAlt::activate_task() {
-    int min_period_array[] = {2, 2, 2};
+    const int min_period_array[] = {1, 2, 3, 1, 1, 2, 3};
+    // const int min_period_array[] = {1, 2, 3, 1, 2, 3};
     int size = (sizeof(min_period_array) / sizeof(*min_period_array));
     LinkedList<int> lls(nullptr, "Min Period Alt Linked List");
     ConsoleColoring::cyan(lls.get_linked_list_name());
