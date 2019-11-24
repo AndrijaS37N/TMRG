@@ -10,12 +10,12 @@ int MinPeriodAlt::min_period_alt(const int *array, const int &size,
     for (int i = 0; i < size; ++i)
         lls.push(array[i]);
 
+    lls.reverse_list();
     lls.print_vertically();
     cout << '\n';
     lls.print_horizontally();
     cout << '\n';
 
-    struct Node<int> *current = lls.get_head();
     int *tmp = find_dividers(size);
     int index = 0;
     while (tmp[index])
@@ -24,13 +24,15 @@ int MinPeriodAlt::min_period_alt(const int *array, const int &size,
     const int &tmp_size = index;
     bool period_completed = false;
 
-    cout << "Result: ";
+    cout << "Result: "; // 2, 3, 2, 2, 3, 2
     for (int j = 0; j < tmp_size; ++j) {
+        struct Node<int> *current = lls.get_head();
         int jump_index = tmp[j];
         if (jump_index == size)
             break;
         while (jump_index < size) {
-            if (current->data != (lls.get_element(jump_index))->data) {
+            auto element_data = (lls.get_element(jump_index))->data;
+            if (current->data != element_data) {
                 period_completed = false;
                 break;
             } else
@@ -49,8 +51,9 @@ int MinPeriodAlt::min_period_alt(const int *array, const int &size,
 }
 
 void MinPeriodAlt::activate_task() {
-    const int min_period_array[] = {1, 2, 3, 1, 1, 2, 3};
+    // const int min_period_array[] = {1, 2, 3, 1, 1, 2, 3};
     // const int min_period_array[] = {1, 2, 3, 1, 2, 3};
+    const int min_period_array[] = {2, 3, 2, 2, 3, 2};
     int size = (sizeof(min_period_array) / sizeof(*min_period_array));
     LinkedList<int> lls(nullptr, "Min Period Alt Linked List");
     ConsoleColoring::cyan(lls.get_linked_list_name());
