@@ -10,6 +10,18 @@
 iostream
 -
 
+/Users/andrijadjuric/CLionProjects/TMRG/main.cpp
+tasks/min_period.h
+/Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.h
+tasks/min_period_alt.h
+/Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period_alt.h
+structures/linked_list.h
+/Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.h
+unistd.h
+-
+thread
+-
+
 /Users/andrijadjuric/CLionProjects/TMRG/math/operation.h
 ../global/console_coloring.h
 /Users/andrijadjuric/CLionProjects/TMRG/global/console_coloring.h
@@ -28,6 +40,12 @@ iostream
 sstream
 -
 string
+-
+
+/Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period.h
+iostream
+-
+stack
 -
 
 /Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period_alt.cpp

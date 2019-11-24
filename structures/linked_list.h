@@ -69,8 +69,8 @@ private:
     struct Node<T> *head;
     const char *linked_list_name;
     inline u_int64_t find_element_length(double data);
-    static inline u_int64_t stringify_double(double &data);
     static constexpr u_int64_t find_element_length(const string &s); // Overloaded.
+    static inline u_int64_t stringify_double(double &data);
     static constexpr void print_width(const u_int64_t &data_length);
     constexpr void print_search_result(u_int64_t *result_indices, const u_int64_t &indices_count);
     struct Node<T> *merge(struct Node<T> *alpha, struct Node<T> *beta);
@@ -133,17 +133,17 @@ inline u_int64_t LinkedList<T>::find_element_length(double number) {
 }
 
 template<typename T>
+constexpr u_int64_t LinkedList<T>::find_element_length(const string &s) {
+    ConsoleColoring::yellow('S'); // Printing as.
+    return s.length() + 2;
+}
+
+template<typename T>
 inline u_int64_t LinkedList<T>::stringify_double(double &data) {
     ConsoleColoring::yellow('D'); // Printing as.
     ostringstream convert;
     convert << data;
     return convert.str().length() + 2;
-}
-
-template<typename T>
-constexpr u_int64_t LinkedList<T>::find_element_length(const string &s) {
-    ConsoleColoring::yellow('S'); // Printing as.
-    return s.length() + 2;
 }
 
 template<typename T>
@@ -186,7 +186,8 @@ void LinkedList<T>::reverse_list() {
     struct Node<T> *previous, *current, *next;
     previous = nullptr;
     current = head; // The head is 4.                                       Sketch for the example:
-    while (current != nullptr) { // The key here is to make a swap.         //  ----------------------------------------------------------------
+    while (current !=
+           nullptr) { // The key here is to make a swap.         //  ----------------------------------------------------------------
         next = current->next_node;                                          // | next = 3      | next = 2      | next = 1      | next = nullptr |
         current->next_node = previous;                                      // | 3 = 4         | 2 = 3         | 1 = 3         | nullptr = 2    |
         previous = current; // This one is useful for the last iteration.   // | previous = 4  | previous = 3  | previous = 2  | previous = 1   |
