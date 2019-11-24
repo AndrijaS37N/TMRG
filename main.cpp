@@ -56,6 +56,7 @@ int main() {
          * Local, global, static variables short notes: http://faculty.cs.niu.edu/~freedman/241/241notes/241var2.htm.
          */
 
+        cout << "This custom linked list structure will not work with pointer values (not really tested anyways)." << endl;
         LinkedList<double> lls(nullptr, "Linked List Structure");
         lls.activate_task();
         cout << endl;
