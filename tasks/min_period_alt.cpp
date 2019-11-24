@@ -53,7 +53,11 @@ int MinPeriodAlt::min_period_alt(const int *array, const int &size,
 void MinPeriodAlt::activate_task() {
     // const int min_period_array[] = {1, 2, 3, 1, 1, 2, 3};
     // const int min_period_array[] = {1, 2, 3, 1, 2, 3};
-    const int min_period_array[] = {2, 3, 2, 2, 3, 2};
+    // const int min_period_array[] = {2, 3, 2, 2, 3, 2};
+    const int min_period_array[] = {1, 1, 1, 7, 1, 1, 1, 7};
+    // const int min_period_array[] = {6, 6, 3, 3, 5, 6, 6, 3, 3, 5};
+    // const int min_period_array[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+    // const int min_period_array[] = {4, 5, 2, 7, 8, 3, 4, 2, 5, 1, 6, 4, 6, 2, 3};
     int size = (sizeof(min_period_array) / sizeof(*min_period_array));
     LinkedList<int> lls(nullptr, "Min Period Alt Linked List");
     ConsoleColoring::cyan(lls.get_linked_list_name());
