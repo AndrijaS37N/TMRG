@@ -48,14 +48,6 @@ iostream
 stack
 -
 
-/Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period_alt.cpp
-iostream
--
-min_period_alt.h
-/Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period_alt.h
-../structures/linked_list.h
-/Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.h
-
 /Users/andrijadjuric/CLionProjects/TMRG/tasks/min_period_alt.h
 ../structures/linked_list.h
 /Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.h

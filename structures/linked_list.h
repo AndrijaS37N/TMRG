@@ -32,14 +32,16 @@ public:
     void reverse_list();
     constexpr void print_vertically();
     constexpr void print_horizontally() const;
-    constexpr struct Node<T> *get_element(const u_int64_t &index) const;
-    constexpr struct Node<T> *get_tail() const;
+    const struct Node<T> *get_element(const u_int64_t &index) const;
+    const struct Node<T> *get_tail() const;
     void insert_at(struct Node<T> *insert_node, const u_int64_t &index);
     void replace_with(struct Node<T> *replace_node, const u_int64_t &index);
     void search_elements(const T data);
     void merge_sort(struct Node<T> **head_references);
+    void heap_sort(); // TODO 👽
     void clear_list();
     bool is_empty();
+    const struct Node<T> *operator[](const u_int64_t &index) const;
     void activate_task();
 
     constexpr const char *get_linked_list_name() const {
@@ -186,8 +188,7 @@ void LinkedList<T>::reverse_list() {
     struct Node<T> *previous, *current, *next;
     previous = nullptr;
     current = head; // The head is 4.                                       Sketch for the example:
-    while (current !=
-           nullptr) { // The key here is to make a swap.         //  ----------------------------------------------------------------
+    while (current != nullptr) { // The key here is to make a swap.         //  ----------------------------------------------------------------
         next = current->next_node;                                          // | next = 3      | next = 2      | next = 1      | next = nullptr |
         current->next_node = previous;                                      // | 3 = 4         | 2 = 3         | 1 = 3         | nullptr = 2    |
         previous = current; // This one is useful for the last iteration.   // | previous = 4  | previous = 3  | previous = 2  | previous = 1   |
@@ -197,7 +198,7 @@ void LinkedList<T>::reverse_list() {
 }
 
 template<typename T>
-constexpr struct Node<T> *LinkedList<T>::get_element(const u_int64_t &index) const {
+const struct Node<T> *LinkedList<T>::get_element(const u_int64_t &index) const {
     struct Node<T> *current = head;
     u_int64_t counter = 0;
     while (current != nullptr) {
@@ -211,7 +212,7 @@ constexpr struct Node<T> *LinkedList<T>::get_element(const u_int64_t &index) con
 }
 
 template<typename T>
-constexpr struct Node<T> *LinkedList<T>::get_tail() const {
+const struct Node<T> *LinkedList<T>::get_tail() const {
     struct Node<T> *current = head;
     while (current) {
         current = current->next_node;
@@ -371,6 +372,15 @@ bool LinkedList<T>::is_empty() {
 }
 
 template<typename T>
+const struct Node<T> *LinkedList<T>::operator[](const u_int64_t &index) const {
+    if (index >= list_size) {
+        ConsoleColoring::red("Buffer read overflow. Entered index is out of bounds of the list.");
+        assert(0);
+    }
+    return get_element(index);
+}
+
+template<typename T>
 LinkedList<T>::~LinkedList() {
     struct Node<T> *current = head;
     struct Node<T> *previous = nullptr;
@@ -486,6 +496,18 @@ void LinkedList<T>::activate_task() {
     ConsoleColoring::blue("Merge sort started.");
     merge_sort(&head);
     print_horizontally();
+
+    cout << '\n';
+
+    LinkedList<int> list(nullptr, "Testing List");
+    ConsoleColoring::cyan(list.get_linked_list_name());
+    list.push(4);
+    list.push(2);
+    list.push(8);
+    list.push(10);
+    list.push(1);
+    list.print_horizontally();
+    cout << "Search with operator [] at index 2: " << list[2]->data << endl;
 
     cout << '\n';
 }

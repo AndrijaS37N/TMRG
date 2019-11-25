@@ -56,14 +56,15 @@ int main() {
          * Local, global, static variables short notes: http://faculty.cs.niu.edu/~freedman/241/241notes/241var2.htm.
          */
 
-        cout << "This custom linked list structure will not work with pointer values (not really tested anyways)." << endl;
-        LinkedList<double> lls(nullptr, "Linked List Structure");
-        lls.activate_task();
-        cout << endl;
-
         MinPeriodAlt min_period_alt_task;
         min_period_alt_task.activate_task();
     }
+
+    ConsoleColoring::yellow("This custom linked list structure will not work with pointer values (not really tested anyways).");
+    LinkedList<double> lls(nullptr, "Linked List Structure");
+    lls.activate_task();
+    cout << "Element at index 2 with operator [] of object lls is: " << lls[2]->data << endl;
+    cout << endl;
 
     // TODO -> Read more news about Concepts, a C++20 feature. Also, more on Modules, Ranges and Coroutine structures.
 
