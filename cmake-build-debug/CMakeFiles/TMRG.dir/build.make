@@ -135,6 +135,32 @@ CMakeFiles/TMRG.dir/math/operation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TMRG.dir/math/operation.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/andrijadjuric/CLionProjects/TMRG/math/operation.cpp -o CMakeFiles/TMRG.dir/math/operation.cpp.s
 
+CMakeFiles/TMRG.dir/networking/server_client/server.cpp.o: CMakeFiles/TMRG.dir/flags.make
+CMakeFiles/TMRG.dir/networking/server_client/server.cpp.o: ../networking/server_client/server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TMRG.dir/networking/server_client/server.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TMRG.dir/networking/server_client/server.cpp.o -c /Users/andrijadjuric/CLionProjects/TMRG/networking/server_client/server.cpp
+
+CMakeFiles/TMRG.dir/networking/server_client/server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TMRG.dir/networking/server_client/server.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/andrijadjuric/CLionProjects/TMRG/networking/server_client/server.cpp > CMakeFiles/TMRG.dir/networking/server_client/server.cpp.i
+
+CMakeFiles/TMRG.dir/networking/server_client/server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TMRG.dir/networking/server_client/server.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/andrijadjuric/CLionProjects/TMRG/networking/server_client/server.cpp -o CMakeFiles/TMRG.dir/networking/server_client/server.cpp.s
+
+CMakeFiles/TMRG.dir/networking/server_client/client.cpp.o: CMakeFiles/TMRG.dir/flags.make
+CMakeFiles/TMRG.dir/networking/server_client/client.cpp.o: ../networking/server_client/client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TMRG.dir/networking/server_client/client.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TMRG.dir/networking/server_client/client.cpp.o -c /Users/andrijadjuric/CLionProjects/TMRG/networking/server_client/client.cpp
+
+CMakeFiles/TMRG.dir/networking/server_client/client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TMRG.dir/networking/server_client/client.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/andrijadjuric/CLionProjects/TMRG/networking/server_client/client.cpp > CMakeFiles/TMRG.dir/networking/server_client/client.cpp.i
+
+CMakeFiles/TMRG.dir/networking/server_client/client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TMRG.dir/networking/server_client/client.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/andrijadjuric/CLionProjects/TMRG/networking/server_client/client.cpp -o CMakeFiles/TMRG.dir/networking/server_client/client.cpp.s
+
 # Object files for target TMRG
 TMRG_OBJECTS = \
 "CMakeFiles/TMRG.dir/main.cpp.o" \
@@ -142,7 +168,9 @@ TMRG_OBJECTS = \
 "CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.o" \
 "CMakeFiles/TMRG.dir/structures/linked_list.cpp.o" \
 "CMakeFiles/TMRG.dir/global/console_coloring.cpp.o" \
-"CMakeFiles/TMRG.dir/math/operation.cpp.o"
+"CMakeFiles/TMRG.dir/math/operation.cpp.o" \
+"CMakeFiles/TMRG.dir/networking/server_client/server.cpp.o" \
+"CMakeFiles/TMRG.dir/networking/server_client/client.cpp.o"
 
 # External object files for target TMRG
 TMRG_EXTERNAL_OBJECTS =
@@ -153,9 +181,11 @@ TMRG: CMakeFiles/TMRG.dir/tasks/min_period_alt.cpp.o
 TMRG: CMakeFiles/TMRG.dir/structures/linked_list.cpp.o
 TMRG: CMakeFiles/TMRG.dir/global/console_coloring.cpp.o
 TMRG: CMakeFiles/TMRG.dir/math/operation.cpp.o
+TMRG: CMakeFiles/TMRG.dir/networking/server_client/server.cpp.o
+TMRG: CMakeFiles/TMRG.dir/networking/server_client/client.cpp.o
 TMRG: CMakeFiles/TMRG.dir/build.make
 TMRG: CMakeFiles/TMRG.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable TMRG"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/andrijadjuric/CLionProjects/TMRG/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable TMRG"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TMRG.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

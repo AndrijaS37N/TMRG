@@ -204,6 +204,60 @@ math/operation.cpp.s:
 	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/math/operation.cpp.s
 .PHONY : math/operation.cpp.s
 
+networking/server_client/client.o: networking/server_client/client.cpp.o
+
+.PHONY : networking/server_client/client.o
+
+# target to build an object file
+networking/server_client/client.cpp.o:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/networking/server_client/client.cpp.o
+.PHONY : networking/server_client/client.cpp.o
+
+networking/server_client/client.i: networking/server_client/client.cpp.i
+
+.PHONY : networking/server_client/client.i
+
+# target to preprocess a source file
+networking/server_client/client.cpp.i:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/networking/server_client/client.cpp.i
+.PHONY : networking/server_client/client.cpp.i
+
+networking/server_client/client.s: networking/server_client/client.cpp.s
+
+.PHONY : networking/server_client/client.s
+
+# target to generate assembly for a file
+networking/server_client/client.cpp.s:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/networking/server_client/client.cpp.s
+.PHONY : networking/server_client/client.cpp.s
+
+networking/server_client/server.o: networking/server_client/server.cpp.o
+
+.PHONY : networking/server_client/server.o
+
+# target to build an object file
+networking/server_client/server.cpp.o:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/networking/server_client/server.cpp.o
+.PHONY : networking/server_client/server.cpp.o
+
+networking/server_client/server.i: networking/server_client/server.cpp.i
+
+.PHONY : networking/server_client/server.i
+
+# target to preprocess a source file
+networking/server_client/server.cpp.i:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/networking/server_client/server.cpp.i
+.PHONY : networking/server_client/server.cpp.i
+
+networking/server_client/server.s: networking/server_client/server.cpp.s
+
+.PHONY : networking/server_client/server.s
+
+# target to generate assembly for a file
+networking/server_client/server.cpp.s:
+	$(MAKE) -f CMakeFiles/TMRG.dir/build.make CMakeFiles/TMRG.dir/networking/server_client/server.cpp.s
+.PHONY : networking/server_client/server.cpp.s
+
 structures/linked_list.o: structures/linked_list.cpp.o
 
 .PHONY : structures/linked_list.o
@@ -303,6 +357,12 @@ help:
 	@echo "... math/operation.o"
 	@echo "... math/operation.i"
 	@echo "... math/operation.s"
+	@echo "... networking/server_client/client.o"
+	@echo "... networking/server_client/client.i"
+	@echo "... networking/server_client/client.s"
+	@echo "... networking/server_client/server.o"
+	@echo "... networking/server_client/server.i"
+	@echo "... networking/server_client/server.s"
 	@echo "... structures/linked_list.o"
 	@echo "... structures/linked_list.i"
 	@echo "... structures/linked_list.s"

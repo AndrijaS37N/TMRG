@@ -95,6 +95,18 @@
 		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/math/operation.h">
 			<Option target="TMRG"/>
 		</Unit>
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/networking/server_client/client.cpp">
+			<Option target="TMRG"/>
+		</Unit>
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/networking/server_client/client.h">
+			<Option target="TMRG"/>
+		</Unit>
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/networking/server_client/server.cpp">
+			<Option target="TMRG"/>
+		</Unit>
+		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/networking/server_client/server.h">
+			<Option target="TMRG"/>
+		</Unit>
 		<Unit filename="/Users/andrijadjuric/CLionProjects/TMRG/structures/linked_list.cpp">
 			<Option target="TMRG"/>
 		</Unit>
